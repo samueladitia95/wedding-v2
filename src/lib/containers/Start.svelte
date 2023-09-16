@@ -17,6 +17,7 @@
 		}}
 		on:inview_change={handleChange}
 	>
+    <!-- Opening Screen -->
 		{#if isShow}
 			<img
 				src="/icons/front-logo.svg"
