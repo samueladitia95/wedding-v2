@@ -1,1 +1,5 @@
-<h1 class="text-4xl text-center">Hello Wedding V2</h1>
+<script>
+	import Start from "$lib/containers/Start.svelte";
+</script>
+
+<Start />

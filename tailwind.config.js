@@ -1,3 +1,5 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ["./src/**/*.{html,js,svelte,ts}"],
@@ -10,6 +12,13 @@ export default {
 				"ro-white": "#FFFFFF",
 				"ro-brown": "#4C4A44",
 				"ro-error": "#D10000"
+			},
+			container: {
+				center: true,
+				padding: "2rem"
+			},
+			fontFamily: {
+				juana: ["Juana", ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},
