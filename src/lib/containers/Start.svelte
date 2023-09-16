@@ -45,13 +45,28 @@
 	{/if}
 
 	{#if isShow && transition1}
-		<div class="h-full w-full">
+		<div class="h-full w-full relative">
 			<img
 				src="/images/start_mobile_1.jpg"
 				alt="main"
-				class="h-full w-full object-cover z-10"
+				class="h-full w-full object-cover"
+				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
+			/>
+			<div
+				class="h-full w-full absolute top-0 left-0 z-10 gradient-layer"
 				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
 			/>
 		</div>
 	{/if}
 </div>
+
+<style>
+	.gradient-layer {
+		background: linear-gradient(
+			180deg,
+			#141414 -6.47%,
+			rgba(0, 0, 0, 0) 65.59%,
+			rgba(0, 0, 0, 0) 110.78%
+		);
+	}
+</style>
