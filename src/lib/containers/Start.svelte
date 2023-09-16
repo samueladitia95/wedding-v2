@@ -44,18 +44,30 @@
 		<div />
 	{/if}
 
+	<!-- Main Content -->
 	{#if isShow && transition1}
 		<div class="h-full w-full relative">
+			<!-- Main Image -->
 			<img
 				src="/images/start_mobile_1.jpg"
 				alt="main"
 				class="h-full w-full object-cover"
 				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
 			/>
+
+			<!-- Gradient Layer -->
 			<div
 				class="h-full w-full absolute top-0 left-0 z-10 gradient-layer"
 				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
 			/>
+
+			<!-- Content Text -->
+			<div class="container absolute top-36 left-0 z-20 text-ro-white text-center">
+				<div class="text-3xl font-juana font-extralight">
+					Let love be sincere; hate what is evil, hold on to what is good.
+				</div>
+				<div class="font-snell font-bold text-lg">Roman 12:9</div>
+			</div>
 		</div>
 	{/if}
 </div>

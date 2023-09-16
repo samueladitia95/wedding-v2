@@ -18,7 +18,8 @@ export default {
 				padding: "2rem"
 			},
 			fontFamily: {
-				juana: ["Juana", ...defaultTheme.fontFamily.sans]
+				juana: ["Juana", ...defaultTheme.fontFamily.sans],
+				snell: ["Snell Roundhand", ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},
