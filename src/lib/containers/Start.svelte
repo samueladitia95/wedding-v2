@@ -2,6 +2,7 @@
 	// Import
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
+	import { cubicOut } from "svelte/easing";
 
 	// State
 	let isShow = false;
@@ -49,7 +50,7 @@
 				src="/images/start_mobile_1.jpg"
 				alt="main"
 				class="h-full w-full object-cover z-10"
-				in:fly={{ y: 2000, duration: 2000, delay: 500 }}
+				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
 			/>
 		</div>
 	{/if}
