@@ -62,11 +62,53 @@
 			/>
 
 			<!-- Content Text -->
-			<div class="container absolute top-36 left-0 z-20 text-ro-white text-center">
+			<div
+				class="container absolute top-36 left-0 z-20 text-ro-white text-center"
+				in:fade={{ duration: 1000, delay: 3500 }}
+			>
 				<div class="text-3xl font-juana font-extralight">
 					Let love be sincere; hate what is evil, hold on to what is good.
 				</div>
 				<div class="font-snell font-bold text-lg">Roman 12:9</div>
+			</div>
+
+			<!-- Action Container -->
+			<div
+				class="container absolute bottom-8 left-0 z-20"
+				in:fade={{ duration: 1000, delay: 2500 }}
+			>
+				<div class="w-full flex justify-between">
+					<button class="bg-ro-creme rounded-full p-3">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="28"
+							height="28"
+							viewBox="0 0 28 28"
+							fill="none"
+						>
+							<path d="M9.55566 21.6945V6.13892L21.7779 13.9167L9.55566 21.6945Z" fill="white" />
+						</svg>
+					</button>
+					<button
+						class="flex gap-2 items-center justify-center font-juana text-xs font-light text-ro-white border border-ro-white px-4 rounded-full"
+					>
+						Scroll down
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="7"
+							height="14"
+							viewBox="0 0 7 14"
+							fill="none"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M3.44751 13.5001L7 10.0195L6.50791 9.57342L3.79464 12.2322L3.79464 0.499873L3.11084 0.499873L3.11084 12.2158L0.499731 9.57652L-1.52319e-07 10.0155L3.44751 13.5001Z"
+								fill="white"
+							/>
+						</svg>
+					</button>
+				</div>
 			</div>
 		</div>
 	{/if}
