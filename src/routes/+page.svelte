@@ -1,5 +1,5 @@
 <script>
-	import Start from "$lib/containers/Start.svelte";
+	import Intro from "$lib/containers/Intro.svelte";
 </script>
 
-<Start />
+<Intro />
