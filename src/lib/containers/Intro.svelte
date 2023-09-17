@@ -9,8 +9,14 @@
 	let transition1 = false;
 
 	// Method
-	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>) => {
+	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
+	};
+
+	const scrollIntoNavigation = (): void => {
+		document.getElementById("nav-container")?.scrollIntoView({
+			behavior: "smooth"
+		});
 	};
 </script>
 
@@ -91,6 +97,7 @@
 					</button>
 					<button
 						class="flex gap-2 items-center justify-center font-juana text-xs font-light text-ro-white border border-ro-white px-4 rounded-full"
+						on:click={() => scrollIntoNavigation()}
 					>
 						Scroll down
 						<svg
