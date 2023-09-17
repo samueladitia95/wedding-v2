@@ -1,3 +1,23 @@
+<script lang="ts">
+	const navItems = [
+		{
+			label: "We Invite You"
+		},
+		{
+			label: "Our Story"
+		},
+		{
+			label: "Wedding Guide"
+		},
+		{
+			label: "Wishes For Us"
+		},
+		{
+			label: "Wedding Gift"
+		}
+	];
+</script>
+
 <div class="bg-ro-light-creme" id="nav-container">
 	<div
 		class="min-h-screen min-w-screen relative pt-16 pb-8 container flex flex-col justify-between items-stretch"
@@ -9,11 +29,15 @@
 
 		<!-- Nav Item -->
 		<div class="flex flex-col gap-6 text-4xl font-juana font-light">
-			<div class="text-left text-ro-nav">We Invite You</div>
-			<div class="text-right text-ro-nav">Our Story</div>
-			<div class="text-left text-ro-nav">Wedding Guide</div>
-			<div class="text-right text-ro-nav">Wishes For Us</div>
-			<div class="text-left text-ro-nav">Wedding Gift</div>
+			{#each navItems as navItem, index}
+				<div
+					class="{index % 2 === 0
+						? 'text-left'
+						: 'text-right'} text-ro-nav hover:text-ro-brown cursor-pointer"
+				>
+					{navItem.label}
+				</div>
+			{/each}
 		</div>
 
 		<!-- Full Name -->
