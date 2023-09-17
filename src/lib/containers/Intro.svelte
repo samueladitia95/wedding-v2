@@ -3,10 +3,16 @@
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 	import { cubicOut } from "svelte/easing";
+	import { isShowIntro } from "$lib/store";
 
 	// State
 	let isShow = false;
 	let transition1 = false;
+
+	// Store
+	isShowIntro.subscribe((value) => {
+		transition1 = value;
+	});
 
 	// Method
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
@@ -42,7 +48,10 @@
 				class="text-ro-brown bg-ro-white text-lg whitespace-nowrap rounded-full px-10 py-4 font-juana absolute bottom-36 left-1/2 transform -translate-x-1/2"
 				in:fade={{ duration: 2000, delay: 2000 }}
 				out:fade={{ duration: 1000 }}
-				on:click={() => (transition1 = true)}
+				on:click={() => {
+					isShowIntro.set(true);
+					document.body.classList.remove("overflow-hidden");
+				}}
 			>
 				Open Invitation
 			</button>
@@ -83,20 +92,9 @@
 				class="container absolute bottom-8 left-0 z-20"
 				in:fade={{ duration: 1000, delay: 2500 }}
 			>
-				<div class="w-full flex justify-between">
-					<button class="bg-ro-creme rounded-full p-3">
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="28"
-							height="28"
-							viewBox="0 0 28 28"
-							fill="none"
-						>
-							<path d="M9.55566 21.6945V6.13892L21.7779 13.9167L9.55566 21.6945Z" fill="white" />
-						</svg>
-					</button>
+				<div class="w-full flex justify-end items-center min-h-[48px]">
 					<button
-						class="flex gap-2 items-center justify-center font-juana text-xs font-light text-ro-white border border-ro-white px-4 rounded-full"
+						class="flex gap-2 items-center justify-center font-juana text-xs font-light text-ro-white border border-ro-white px-4 py-2 rounded-full"
 						on:click={() => scrollIntoNavigation()}
 					>
 						Scroll down
