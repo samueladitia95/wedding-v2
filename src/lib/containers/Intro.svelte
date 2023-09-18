@@ -118,14 +118,3 @@
 		</div>
 	{/if}
 </div>
-
-<style>
-	.gradient-layer {
-		background: linear-gradient(
-			180deg,
-			#141414 -6.47%,
-			rgba(0, 0, 0, 0) 65.59%,
-			rgba(0, 0, 0, 0) 110.78%
-		);
-	}
-</style>
