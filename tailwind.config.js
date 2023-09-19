@@ -21,7 +21,9 @@ export default {
 			fontFamily: {
 				juana: ["Juana", ...defaultTheme.fontFamily.sans],
 				"juana-alt": ["Juana Alt", ...defaultTheme.fontFamily.sans],
-				snell: ["Snell Roundhand", ...defaultTheme.fontFamily.sans]
+				snell: ["Snell Roundhand", ...defaultTheme.fontFamily.sans],
+				alex: ["Alex Brush", ...defaultTheme.fontFamily.sans],
+				oakes: ["Oakes Grotesk", ...defaultTheme.fontFamily.sans]
 			}
 		}
 	},
