@@ -1,19 +1,24 @@
 <script lang="ts">
 	const navItems = [
 		{
-			label: "We Invite You"
+			label: "We Invite You",
+			href: "/invitation"
 		},
 		{
-			label: "Our Story"
+			label: "Our Story",
+			href: "/"
 		},
 		{
-			label: "Wedding Guide"
+			label: "Wedding Guide",
+			href: "/"
 		},
 		{
-			label: "Wishes For Us"
+			label: "Wishes For Us",
+			href: "/"
 		},
 		{
-			label: "Wedding Gift"
+			label: "Wedding Gift",
+			href: "/"
 		}
 	];
 </script>
@@ -30,13 +35,14 @@
 		<!-- Nav Item -->
 		<div class="flex flex-col gap-6 text-4xl font-juana font-light">
 			{#each navItems as navItem, index}
-				<div
+				<a
 					class="{index % 2 === 0
 						? 'text-left'
 						: 'text-right'} text-ro-nav hover:text-ro-brown cursor-pointer"
+					href={navItem.href}
 				>
 					{navItem.label}
-				</div>
+				</a>
 			{/each}
 		</div>
 
