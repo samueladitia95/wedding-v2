@@ -26,6 +26,18 @@
 			</div>
 		</div>
 
-		<div class="container min-h-screen min-w-full">block2</div>
+		<div class="min-h-screen min-w-full bg-ro-brown pt-32">
+			<div class="">
+				<div class="bg-ro-light-creme rounded-t-full h-[200px]" />
+				<div class="bg-ro-light-creme">
+					<div class="container min-h-screen">
+						<div class="text-center text-juana text-ro-black flex flex-col gap-2">
+							<div class="text-4xl font-light">Raymond Winoto</div>
+							<div class="text-lg font-extralight">Son of Epi Sodie Winoto and Fenny Tjie</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </div>
