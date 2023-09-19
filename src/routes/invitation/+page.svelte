@@ -91,7 +91,9 @@
 						</div>
 
 						<!-- Timer -->
-						<div class="grid grid-cols-2 grid-rows-2 text-ro-brown gap-y-8 gap-x-4">
+						<div
+							class="grid grid-cols-2 grid-rows-2 text-ro-brown gap-y-8 gap-x-4 max-w-[250px] mx-auto"
+						>
 							{#each countdowns as countdown}
 								<div class="flex flex-col justify-center items-center">
 									<div class="font-oakes text-5xl">{countdown.value}</div>
