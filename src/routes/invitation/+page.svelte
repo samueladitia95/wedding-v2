@@ -22,14 +22,16 @@
 	<div class="relative">
 		{#if isShow}
 			<div
-				class="w-full flex justify-between items-center text-ro-white absolute top-0 z-20 pt-10 container"
+				class="w-full flex justify-between items-center text-ro-white absolute top-0 z-40 pt-10 container"
 				in:fade={{ duration: 2000, delay: 500 }}
 			>
 				<!-- Main Logo -->
 				<img src="/images/logo_white_2.png" alt="logo" class="w-12 h-12" />
 
 				<!-- Close button -->
-				<img src="/icons/close-white.svg" alt="close" class="w-8 h-8" />
+				<a href="/#invitation">
+					<img src="/icons/close-white.svg" alt="close" class="w-8 h-8" />
+				</a>
 			</div>
 		{/if}
 		<InviteIntro />
