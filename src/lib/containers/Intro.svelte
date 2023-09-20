@@ -3,7 +3,7 @@
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 	import { cubicOut } from "svelte/easing";
-	import { isShowIntro } from "$lib/store";
+	import { isPlay, isShowIntro } from "$lib/store";
 
 	// State
 	let isShow = false;
@@ -50,6 +50,7 @@
 				out:fade={{ duration: 1000 }}
 				on:click={() => {
 					isShowIntro.set(true);
+					isPlay.set(true);
 					document.body.classList.remove("overflow-hidden");
 				}}
 			>

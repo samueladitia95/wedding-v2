@@ -37,7 +37,7 @@
 	<InviteCountdown />
 
 	<!-- Back to Menu -->
-	<div class="flex items-center justify-center py-11 bg-ro-creme">
+	<div class="flex items-center justify-center py-11 bg-ro-creme z-50">
 		<a href="/" class="flex items-center justify-center gap-2">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
