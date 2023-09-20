@@ -3,15 +3,20 @@
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 	import { cubicOut } from "svelte/easing";
-	import { isPlay, isShowIntro } from "$lib/store";
+	import { isFromAnotherPage, isPlay, isShowIntro } from "$lib/store";
 
 	// State
 	let isShow = false;
 	let transition1 = false;
+	let skipAnimation = false;
 
 	// Store
 	isShowIntro.subscribe((value) => {
 		transition1 = value;
+	});
+	isFromAnotherPage.subscribe((value) => {
+		skipAnimation = value;
+		isShow = true;
 	});
 
 	// Method
@@ -35,7 +40,7 @@
 	on:inview_change={handleChange}
 >
 	<!-- Opening Screen -->
-	{#if isShow && !transition1}
+	{#if skipAnimation || (isShow && !transition1)}
 		<div class="container h-full w-full relative">
 			<img
 				src="/icons/front-logo.svg"
@@ -61,7 +66,7 @@
 	{/if}
 
 	<!-- Main Content -->
-	{#if isShow && transition1}
+	{#if skipAnimation || (isShow && transition1)}
 		<div class="h-full w-full relative">
 			<!-- Main Image -->
 			<img

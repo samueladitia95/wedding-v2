@@ -2,23 +2,28 @@
 	const navItems = [
 		{
 			label: "We Invite You",
-			href: "/invitation"
+			href: "/invitation",
+			id: "invitation"
 		},
 		{
 			label: "Our Story",
-			href: "/"
+			href: "/",
+			id: ""
 		},
 		{
 			label: "Wedding Guide",
-			href: "/"
+			href: "/",
+			id: ""
 		},
 		{
 			label: "Wishes For Us",
-			href: "/"
+			href: "/",
+			id: ""
 		},
 		{
 			label: "Wedding Gift",
-			href: "/"
+			href: "/",
+			id: ""
 		}
 	];
 </script>
@@ -40,6 +45,7 @@
 						? 'text-left'
 						: 'text-right'} text-ro-nav hover:text-ro-brown cursor-pointer"
 					href={navItem.href}
+					id={navItem.id}
 				>
 					{navItem.label}
 				</a>

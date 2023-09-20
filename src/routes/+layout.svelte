@@ -2,7 +2,7 @@
 	// Import
 	import "../app.css";
 	import { page } from "$app/stores";
-	import { isPlay, isShowIntro } from "$lib/store";
+	import { isFromAnotherPage, isPlay, isShowIntro } from "$lib/store";
 	import { afterUpdate, onMount } from "svelte";
 	import { fade } from "svelte/transition";
 
@@ -21,12 +21,14 @@
 
 	// Lifecycle
 	onMount(() => {
-		window.scrollTo(0, 0);
 		document.body.classList.add("no-scrollbar");
 
-		if ($page.url.pathname !== "/") {
+		if ($page.url.hash) {
+			isFromAnotherPage.set(true);
+		} else if ($page.url.pathname !== "/") {
 			isShowIntro.set(true);
 		} else {
+			window.scrollTo(0, 0);
 			document.body.classList.add("overflow-hidden");
 		}
 	});

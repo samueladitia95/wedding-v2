@@ -52,139 +52,113 @@
 </script>
 
 <div class="relative min-h-screen min-w-full">
-	<div class="absolute z-20 min-h-screen min-w-full">
-		<div class="min-h-screen min-w-full bg-ro-brown pt-32">
-			<div class="">
-				<div class="bg-ro-light-creme rounded-t-full h-[200px]" />
-				<div class="bg-ro-light-creme">
-					<div class="container min-h-screen max-w-sm text-ro-black">
-						<div
-							class="flex flex-col gap-10"
-							use:inview={{
-								rootMargin: "0px",
-								unobserveOnEnter: true
-							}}
-							on:inview_change={handleChangeBrideGroom}
-						>
-							{#if isShowBrideGroom}
-								<!-- Groom -->
-								<div
-									class="text-center flex flex-col gap-2"
-									in:fly={{ y: -1000, duration: 2000, delay: 500 }}
-								>
-									<div class="text-4xl font-mirage">Raymond Winoto</div>
-									<div class="text-lg font-mirage">Son of Epi Sodie Winoto and Fenny Tjie</div>
-								</div>
-
-								<div
-									class="text-5xl font-alex text-center"
-									in:fade={{ duration: 2000, delay: 500 }}
-								>
-									&
-								</div>
-
-								<!-- Bride -->
-								<div
-									class="text-center flex flex-col gap-2 mb-36"
-									in:fly={{ y: 1000, duration: 2000, delay: 500 }}
-								>
-									<div class="text-4xl font-mirage">Olivia Virginia Halim</div>
-									<div class="text-lg font-mirage">Daughter of Rudy Halim and Helena Halim</div>
-								</div>
-							{/if}
-						</div>
-
-						{#if browser}
+	<div class="min-h-screen min-w-full bg-ro-brown pt-32">
+		<div class="">
+			<div class="bg-ro-light-creme rounded-t-full h-[200px]" />
+			<div class="bg-ro-light-creme">
+				<div class="container min-h-screen max-w-sm text-ro-black">
+					<div
+						class="flex flex-col gap-10"
+						use:inview={{
+							rootMargin: "0px",
+							unobserveOnEnter: true
+						}}
+						on:inview_change={handleChangeBrideGroom}
+					>
+						{#if isShowBrideGroom}
+							<!-- Groom -->
 							<div
-								use:inview={{
-									rootMargin: "-100px",
-									unobserveOnEnter: true
-								}}
-								on:inview_change={handleChangeCarausel}
+								class="text-center flex flex-col gap-2"
+								in:fly={{ y: -1000, duration: 2000, delay: 500 }}
 							>
-								{#if isShowCarausel}
-									<div class="w-full" in:fade={{ duration: 2000, delay: 500 }}>
-										<Carousel
-											autoplay
-											timingFunction="linear"
-											autoplayDuration={0}
-											duration={5000}
-											dots={false}
-											arrows={false}
-										>
-											{#each images as image}
-												<div class="p-3">
-													<img
-														src={image}
-														alt="invite"
-														class="object-cover w-[307px] max-h-[336px] rounded"
-													/>
-												</div>
-											{/each}
-										</Carousel>
-									</div>
-								{/if}
+								<div class="text-4xl font-mirage">Raymond Winoto</div>
+								<div class="text-lg font-mirage">Son of Epi Sodie Winoto and Fenny Tjie</div>
+							</div>
+
+							<div class="text-5xl font-alex text-center" in:fade={{ duration: 2000, delay: 500 }}>
+								&
+							</div>
+
+							<!-- Bride -->
+							<div
+								class="text-center flex flex-col gap-2 mb-36"
+								in:fly={{ y: 1000, duration: 2000, delay: 500 }}
+							>
+								<div class="text-4xl font-mirage">Olivia Virginia Halim</div>
+								<div class="text-lg font-mirage">Daughter of Rudy Halim and Helena Halim</div>
 							</div>
 						{/if}
+					</div>
 
+					{#if browser}
 						<div
 							use:inview={{
 								rootMargin: "-100px",
 								unobserveOnEnter: true
 							}}
-							on:inview_change={handleChangeCountdown}
+							on:inview_change={handleChangeCarausel}
 						>
-							{#if isShowCountdown}
-								<div
-									class="font-mirage text-xl text-center mb-20 mt-32"
-									in:fly={{ y: 1000, duration: 2000, delay: 500 }}
-								>
-									INVITE YOU TO THEIR WEDDING
-								</div>
-
-								<div
-									class="font-island text-ro-black text-4xl text-center mb-12"
-									in:fly={{ y: 1000, duration: 2000, delay: 1000 }}
-								>
-									<div>Friday,</div>
-									<div>17 November 2023</div>
-								</div>
-
-								<!-- Timer -->
-								<div
-									class="grid grid-cols-2 grid-rows-2 text-ro-brown gap-y-8 gap-x-4 max-w-[250px] mx-auto pb-28"
-									in:fly={{ y: 1000, duration: 2000, delay: 1500 }}
-								>
-									{#each countdowns as countdown}
-										<div class="flex flex-col justify-center items-center">
-											<div class="font-mirage text-5xl">{countdown.value}</div>
-											<div class="font-oakes">{countdown.type}(S)</div>
-										</div>
-									{/each}
+							{#if isShowCarausel}
+								<div class="w-full" in:fade={{ duration: 2000, delay: 500 }}>
+									<Carousel
+										autoplay
+										timingFunction="linear"
+										autoplayDuration={0}
+										duration={5000}
+										dots={false}
+										arrows={false}
+									>
+										{#each images as image}
+											<div class="p-3">
+												<img
+													src={image}
+													alt="invite"
+													class="object-cover w-[307px] max-h-[336px] rounded"
+												/>
+											</div>
+										{/each}
+									</Carousel>
 								</div>
 							{/if}
 						</div>
-					</div>
+					{/if}
 
-					<!-- Back to Menu -->
-					<div class="flex items-center justify-center py-11 bg-ro-creme">
-						<a href="/" class="flex items-center justify-center gap-2">
-							<svg
-								xmlns="http://www.w3.org/2000/svg"
-								width="25"
-								height="14"
-								viewBox="0 0 25 14"
-								fill="none"
+					<div
+						use:inview={{
+							rootMargin: "-100px",
+							unobserveOnEnter: true
+						}}
+						on:inview_change={handleChangeCountdown}
+					>
+						{#if isShowCountdown}
+							<div
+								class="font-mirage text-xl text-center mb-20 mt-32"
+								in:fly={{ x: -1000, duration: 2000, delay: 500 }}
 							>
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M0.5 6.90308L6.92566 13.4614L7.74916 12.5529L2.84075 7.54392L24.5001 7.54392V6.28155L2.871 6.28155L7.74344 1.46114L6.93308 0.538574L0.5 6.90308Z"
-									fill="white"
-								/>
-							</svg>
-							<div class="font-mirage text-lg text-ro-white">Back to Menu</div>
-						</a>
+								INVITE YOU TO THEIR WEDDING
+							</div>
+
+							<div
+								class="font-island text-ro-black text-4xl text-center mb-12"
+								in:fly={{ x: -1000, duration: 2000, delay: 1000 }}
+							>
+								<div>Friday,</div>
+								<div>17 November 2023</div>
+							</div>
+
+							<!-- Timer -->
+							<div
+								class="grid grid-cols-2 grid-rows-2 text-ro-brown gap-y-8 gap-x-4 max-w-[250px] mx-auto pb-28"
+								in:fly={{ x: -1000, duration: 2000, delay: 1500 }}
+							>
+								{#each countdowns as countdown}
+									<div class="flex flex-col justify-center items-center">
+										<div class="font-mirage text-5xl">{countdown.value}</div>
+										<div class="font-oakes">{countdown.type}(S)</div>
+									</div>
+								{/each}
+							</div>
+						{/if}
 					</div>
 				</div>
 			</div>
