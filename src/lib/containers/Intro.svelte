@@ -67,12 +67,12 @@
 
 	<!-- Main Content -->
 	{#if skipAnimation || (isShow && transition1)}
-		<div class="h-full w-full relative">
+		<div class="min-h-screen min-w-full relative">
 			<!-- Main Image -->
 			<img
 				src="/images/start_mobile_1.jpg"
 				alt="main"
-				class="h-full w-full object-cover"
+				class="min-h-screen w-full object-cover"
 				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
 			/>
 
