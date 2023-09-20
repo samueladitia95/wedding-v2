@@ -45,7 +45,7 @@
 				out:fade={{ duration: 1000 }}
 			/>
 			<button
-				class="text-ro-brown bg-ro-white text-lg whitespace-nowrap rounded-full px-10 py-4 font-juana absolute bottom-36 left-1/2 transform -translate-x-1/2"
+				class="text-ro-brown bg-ro-white text-lg whitespace-nowrap rounded-full px-10 py-4 font-mirage absolute bottom-36 left-1/2 transform -translate-x-1/2"
 				in:fade={{ duration: 2000, delay: 2000 }}
 				out:fade={{ duration: 1000 }}
 				on:click={() => {
@@ -81,10 +81,10 @@
 				class="container absolute top-36 left-0 z-20 text-ro-white text-center"
 				in:fade={{ duration: 1000, delay: 3500 }}
 			>
-				<div class="text-3xl font-juana font-extralight">
+				<div class="text-3xl font-mirage">
 					Let love be sincere; hate what is evil, hold on to what is good.
 				</div>
-				<div class="font-snell font-bold text-lg">Roman 12:9</div>
+				<div class="font-island text-lg">Roman 12:9</div>
 			</div>
 
 			<!-- Action Container -->
@@ -94,7 +94,7 @@
 			>
 				<div class="w-full flex justify-end items-center min-h-[48px]">
 					<button
-						class="flex gap-2 items-center justify-center font-juana text-xs font-light text-ro-white border border-ro-white px-4 py-2 rounded-full"
+						class="flex gap-2 items-center justify-center font-mirage text-xs text-ro-white border border-ro-white px-4 py-2 rounded-full"
 						on:click={() => scrollIntoNavigation()}
 					>
 						Scroll down

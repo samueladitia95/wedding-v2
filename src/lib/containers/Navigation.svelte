@@ -33,7 +33,7 @@
 		</div>
 
 		<!-- Nav Item -->
-		<div class="flex flex-col gap-6 text-4xl font-juana font-light">
+		<div class="flex flex-col gap-6 text-4xl font-mirage">
 			{#each navItems as navItem, index}
 				<a
 					class="{index % 2 === 0

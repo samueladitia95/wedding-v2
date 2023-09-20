@@ -6,209 +6,6 @@
 
 @layer base {
 	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-thin.otf");
-		font-weight: 100;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-thinit.otf");
-		font-weight: 100;
-		font-display: swap;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-extralight.otf");
-		font-weight: 200;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-extralightit.otf");
-		font-weight: 200;
-		font-display: swap;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-light.otf");
-		font-weight: 300;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-lightit.otf");
-		font-weight: 300;
-		font-display: swap;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-regular.otf");
-		font-weight: 400;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-regularit.otf");
-		font-weight: 400;
-		font-display: swap;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-medium.otf");
-		font-weight: 500;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-mediumit.otf");
-		font-weight: 500;
-		font-display: swap;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-semibold.otf");
-		font-weight: 600;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-semiboldit.otf");
-		font-weight: 600;
-		font-display: swap;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-bold.otf");
-		font-weight: 700;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-boldit.otf");
-		font-weight: 700;
-		font-display: swap;
-		font-style: italic;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-black.otf");
-		font-weight: 900;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana";
-		src: local("Juana"), local("juana"), url("/fonts/Juana/Fontspring-DEMO-juana-blackit.otf");
-		font-weight: 900;
-		font-display: swap;
-		font-style: italic;
-	}
-
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-thin.otf");
-		font-weight: 100;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-extralight.otf");
-		font-weight: 200;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-light.otf");
-		font-weight: 300;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-regular.otf");
-		font-weight: 400;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-medium.otf");
-		font-weight: 500;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-semibold.otf");
-		font-weight: 600;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-bold.otf");
-		font-weight: 700;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Juana Alt";
-		src: local("Juana Alt"), local("Juana-Alt"), local("juana alt"),
-			url("/fonts/Juana/Fontspring-DEMO-juanaalt-black.otf");
-		font-weight: 900;
-		font-display: swap;
-		font-style: normal;
-	}
-
-	@font-face {
-		font-family: "Snell Roundhand";
-		src: local("Snell Roundhand"), local("Snell-Roundhand"), local("snell roundhand"),
-			url("/fonts/SnellRoundhand/SnellRoundhand-01.ttf");
-		font-weight: 400;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Snell Roundhand";
-		src: local("Snell Roundhand"), local("Snell-Roundhand"), local("snell roundhand"),
-			url("/fonts/SnellRoundhand/SnellRoundhand-Bold-02.ttf");
-		font-weight: 700;
-		font-display: swap;
-		font-style: normal;
-	}
-	@font-face {
-		font-family: "Snell Roundhand";
-		src: local("Snell Roundhand"), local("Snell-Roundhand"), local("snell roundhand"),
-			url("/fonts/SnellRoundhand/SnellRoundhand-Black-03.ttf");
-		font-weight: 900;
-		font-display: swap;
-		font-style: normal;
-	}
-
-	@font-face {
 		font-family: "Oakes Grotesk";
 		src: local("Oakes Grotesk"), local("Oakes-Grotesk"), local("oakes grotesk"),
 			local("oakes grotesk"), url("/fonts/Oakes/Oakes Grotesk Light.ttf");
@@ -287,6 +84,56 @@
 		font-weight: 700;
 		font-display: swap;
 		font-style: italic;
+	}
+
+	@font-face {
+		font-family: "Made Mirage";
+		src: local("Made Mirage"), local("Made-Mirage"), local("made mirage"),
+			url("/fonts/Mirage/MADE Mirage Thin PERSONAL USE.otf");
+		font-weight: 100;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Made Mirage";
+		src: local("Made Mirage"), local("Made-Mirage"), local("made mirage"),
+			url("/fonts/Mirage/MADE Mirage Regular PERSONAL USE.otf");
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Made Mirage";
+		src: local("Made Mirage"), local("Made-Mirage"), local("made mirage"),
+			url("/fonts/Mirage/MADE Mirage Medium PERSONAL USE.otf");
+		font-weight: 500;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Made Mirage";
+		src: local("Made Mirage"), local("Made-Mirage"), local("made mirage"),
+			url("/fonts/Mirage/MADE Mirage Bold PERSONAL USE.otf");
+		font-weight: 700;
+		font-display: swap;
+		font-style: normal;
+	}
+	@font-face {
+		font-family: "Made Mirage";
+		src: local("Made Mirage"), local("Made-Mirage"), local("made mirage"),
+			url("/fonts/Mirage/MADE Mirage Black PERSONAL USE.otf");
+		font-weight: 900;
+		font-display: swap;
+		font-style: normal;
+	}
+
+	@font-face {
+		font-family: "Island Script Opti";
+		src: local("Island Script Opti"), local("Island-Script-Opti"), local("island script opti"),
+			url("/fonts/Island/IslandScriptOpti.otf");
+		font-weight: 400;
+		font-display: swap;
+		font-style: normal;
 	}
 }
 

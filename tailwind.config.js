@@ -19,9 +19,8 @@ export default {
 				padding: "2rem"
 			},
 			fontFamily: {
-				juana: ["Juana", ...defaultTheme.fontFamily.sans],
-				"juana-alt": ["Juana Alt", ...defaultTheme.fontFamily.sans],
-				snell: ["Snell Roundhand", ...defaultTheme.fontFamily.sans],
+				mirage: ["Made Mirage", ...defaultTheme.fontFamily.sans],
+				island: ["Island Script Opti", ...defaultTheme.fontFamily.sans],
 				alex: ["Alex Brush", ...defaultTheme.fontFamily.sans],
 				oakes: ["Oakes Grotesk", ...defaultTheme.fontFamily.sans]
 			}
