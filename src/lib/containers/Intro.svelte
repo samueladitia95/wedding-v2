@@ -25,7 +25,7 @@
 	};
 
 	const scrollIntoNavigation = (): void => {
-		document.getElementById("nav-container")?.scrollIntoView({
+		document.getElementById("footer-name")?.scrollIntoView({
 			behavior: "smooth"
 		});
 	};

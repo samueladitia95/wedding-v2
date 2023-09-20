@@ -28,7 +28,7 @@
 	];
 </script>
 
-<div class="bg-ro-light-creme" id="nav-container">
+<div class="bg-ro-light-creme">
 	<div
 		class="min-h-screen min-w-screen relative pt-16 pb-8 container flex flex-col justify-between items-stretch"
 	>
@@ -53,7 +53,7 @@
 		</div>
 
 		<!-- Full Name -->
-		<div class="w-full flex justify-center">
+		<div class="w-full flex justify-center" id="footer-name">
 			<img src="/icons/full-name.svg" alt="full name" class="w-28 h-[14px]" />
 		</div>
 	</div>
