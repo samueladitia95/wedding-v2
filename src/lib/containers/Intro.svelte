@@ -8,15 +8,18 @@
 	// State
 	let isShow = false;
 	let transition1 = false;
-	let skipAnimation = false;
+	let isSkipAnimation = false;
 
 	// Store
 	isShowIntro.subscribe((value) => {
 		transition1 = value;
 	});
 	isFromAnotherPage.subscribe((value) => {
-		skipAnimation = value;
-		isShow = true;
+		if (value) {
+			isShow = true;
+			transition1 = true;
+			isSkipAnimation = true;
+		}
 	});
 
 	// Method
@@ -40,7 +43,7 @@
 	on:inview_change={handleChange}
 >
 	<!-- Opening Screen -->
-	{#if skipAnimation || (isShow && !transition1)}
+	{#if isShow && !transition1}
 		<div class="container h-full w-full relative">
 			<img
 				src="/icons/front-logo.svg"
@@ -66,26 +69,26 @@
 	{/if}
 
 	<!-- Main Content -->
-	{#if skipAnimation || (isShow && transition1)}
+	{#if isShow && transition1}
 		<div class="min-h-screen min-w-full relative">
 			<!-- Main Image -->
 			<img
 				src="/images/start_mobile_1.jpg"
 				alt="main"
 				class="min-h-screen w-full object-cover"
-				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
+				in:fly={!isSkipAnimation ? { y: 2000, duration: 2000, delay: 500, easing: cubicOut } : {}}
 			/>
 
 			<!-- Gradient Layer -->
 			<div
 				class="h-full w-full absolute top-0 left-0 z-10 gradient-layer"
-				in:fly={{ y: 2000, duration: 2000, delay: 500, easing: cubicOut }}
+				in:fly={!isSkipAnimation ? { y: 2000, duration: 2000, delay: 500, easing: cubicOut } : {}}
 			/>
 
 			<!-- Content Text -->
 			<div
 				class="container absolute top-36 left-0 z-20 text-ro-white text-center"
-				in:fade={{ duration: 1000, delay: 3500 }}
+				in:fade={!isSkipAnimation ? { duration: 1000, delay: 3500 } : {}}
 			>
 				<div class="text-3xl font-mirage">
 					Let love be sincere; hate what is evil, hold on to what is good.
@@ -96,7 +99,7 @@
 			<!-- Action Container -->
 			<div
 				class="container absolute bottom-8 left-0 z-20"
-				in:fade={{ duration: 1000, delay: 2500 }}
+				in:fade={!isSkipAnimation ? { duration: 1000, delay: 2500 } : {}}
 			>
 				<div class="w-full flex justify-end items-center min-h-[48px]">
 					<button

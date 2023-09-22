@@ -24,6 +24,7 @@
 		document.body.classList.add("no-scrollbar");
 
 		if ($page.url.hash) {
+			isShowIntro.set(true);
 			isFromAnotherPage.set(true);
 		} else if ($page.url.pathname !== "/") {
 			isShowIntro.set(true);
