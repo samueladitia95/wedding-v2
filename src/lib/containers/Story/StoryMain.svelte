@@ -1,0 +1,63 @@
+<script lang="ts">
+	import "@splidejs/svelte-splide/css";
+	import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+	import { Splide, SplideSlide } from "@splidejs/svelte-splide";
+	import { browser } from "$app/environment";
+	import { inview } from "svelte-inview";
+	import { fade, fly } from "svelte/transition";
+	import { carauselImages } from "$lib/constants";
+
+	let isShow = false;
+
+	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
+		if (!isShow && detail.inView) isShow = true;
+	};
+</script>
+
+<div
+	class="min-h-screen w-screen bg-ro-brown"
+	use:inview={{
+		rootMargin: "-100px",
+		unobserveOnEnter: true
+	}}
+	on:inview_change={handleChange}
+>
+	{#if isShow}
+		<div class="container">
+			<div class="text-center font-mirage text-xl text-ro-white pt-36 leading-relaxed">
+				We were classmates and lab partners back in college year 2013 who hated each other for a
+				year until we started snapchat-ing and going on coffee dates.
+			</div>
+
+			{#if browser}
+				<div class="mt-16">
+					<div in:fade={{ duration: 2000, delay: 2000 }}>
+						<Splide
+							aria-label="invite countdown carausel"
+							extensions={{ AutoScroll }}
+							options={{
+								arrows: false,
+								pagination: false,
+								type: "loop",
+								gap: "16px",
+								autoScroll: {
+									rewind: true
+								}
+							}}
+						>
+							{#each carauselImages as image}
+								<SplideSlide>
+									<img
+										src={image}
+										alt="invite"
+										class="object-cover w-[450px] max-h-[354px] rounded"
+									/>
+								</SplideSlide>
+							{/each}
+						</Splide>
+					</div>
+				</div>
+			{/if}
+		</div>
+	{/if}
+</div>
