@@ -2,7 +2,9 @@
 	import dayjs from "dayjs";
 	import duration from "dayjs/plugin/duration";
 	import { onMount } from "svelte";
-	import Carousel from "svelte-carousel";
+	import "@splidejs/svelte-splide/css";
+	import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
+	import { Splide, SplideSlide } from "@splidejs/svelte-splide";
 	import { browser } from "$app/environment";
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
@@ -12,6 +14,7 @@
 	let isShowBrideGroom = false;
 	let isShowCarausel = false;
 	let isShowCountdown = false;
+
 	const weddingDay = dayjs("2023-11-17", "yyyy-mm-dd");
 	let countdowns = [
 		{ type: "Day", value: 0 },
@@ -99,25 +102,28 @@
 							on:inview_change={handleChangeCarausel}
 						>
 							{#if isShowCarausel}
-								<div class="w-full" in:fade={{ duration: 2000, delay: 500 }}>
-									<Carousel
-										autoplay
-										timingFunction="linear"
-										autoplayDuration={0}
-										duration={5000}
-										dots={false}
-										arrows={false}
+								<div in:fade={{ duration: 2000, delay: 500 }}>
+									<Splide
+										aria-label="invite countdown carausel"
+										extensions={{ AutoScroll }}
+										options={{
+											arrows: false,
+											pagination: false,
+											autoScroll: {
+												rewind: true
+											}
+										}}
 									>
 										{#each images as image}
-											<div class="p-3">
+											<SplideSlide>
 												<img
 													src={image}
 													alt="invite"
 													class="object-cover w-[307px] max-h-[336px] rounded"
 												/>
-											</div>
+											</SplideSlide>
 										{/each}
-									</Carousel>
+									</Splide>
 								</div>
 							{/if}
 						</div>
