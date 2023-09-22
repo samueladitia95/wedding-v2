@@ -2,7 +2,7 @@
 	import { isFromAnotherPage, isShowIntro } from "$lib/store";
 </script>
 
-<div class="flex items-center justify-center py-11 bg-ro-creme z-50" id="back-to-menu">
+<div class="flex items-center justify-center py-11 bg-ro-creme z-50 relative" id="back-to-menu">
 	<a
 		href="/#invitation"
 		class="flex items-center justify-center gap-2"
