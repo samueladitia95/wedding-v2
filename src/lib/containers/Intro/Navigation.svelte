@@ -7,8 +7,8 @@
 		},
 		{
 			label: "Our Story",
-			href: "/",
-			id: ""
+			href: "/story",
+			id: "story"
 		},
 		{
 			label: "Wedding Guide",
