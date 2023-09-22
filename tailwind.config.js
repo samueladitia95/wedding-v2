@@ -23,6 +23,9 @@ export default {
 				island: ["Island Script Opti", ...defaultTheme.fontFamily.sans],
 				alex: ["Alex Brush", ...defaultTheme.fontFamily.sans],
 				oakes: ["Oakes Grotesk", ...defaultTheme.fontFamily.sans]
+			},
+			zIndex: {
+				full: 100
 			}
 		}
 	},
