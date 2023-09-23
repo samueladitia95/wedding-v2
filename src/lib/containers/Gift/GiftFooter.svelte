@@ -1,5 +1,5 @@
 <div class="w-screen bg-ro-creme pt-24">
-	<div class="bg-ro-light-creme rounded-t-full pt-40 min-h-[80vh]">
+	<div class="bg-ro-light-creme rounded-t-full pt-48 min-h-[80vh]">
 		<div class=" text-ro-black container flex flex-col justify-start items-center gap-8">
 			<div
 				class="font-mirage text-lg text-ro-black text-center flex flex-col justify-center items-center gap-10"
