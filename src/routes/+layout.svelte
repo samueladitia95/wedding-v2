@@ -52,7 +52,10 @@
 			in:fade={{ duration: 1000, delay: 2500 }}
 		>
 			<div class="w-full flex justify-start">
-				<button class="bg-ro-creme rounded-full p-[11px]" on:click={() => isPlay.set(!isPlaying)}>
+				<button
+					class="bg-ro-creme rounded-full p-[11px] drop-shadow"
+					on:click={() => isPlay.set(!isPlaying)}
+				>
 					{#if isPlaying}
 						<svg
 							xmlns="http://www.w3.org/2000/svg"
