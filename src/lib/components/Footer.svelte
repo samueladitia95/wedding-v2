@@ -5,7 +5,7 @@
 
 <div class="flex items-center justify-center py-11 bg-ro-creme z-50 relative" id="back-to-menu">
 	<a
-		href="/#${id}"
+		href="/#{id}"
 		class="flex items-center justify-center gap-2"
 		on:click={() => {
 			isShowIntro.set(true);
