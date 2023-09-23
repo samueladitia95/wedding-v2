@@ -1,13 +1,16 @@
 <script lang="ts">
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
+	import GuideDetail from "$lib/containers/Guide/GuideDetail.svelte";
 	import GuideIntro from "$lib/containers/Guide/GuideIntro.svelte";
 </script>
 
 <div>
-	<Header id="gift">
+	<Header id="guide">
 		<GuideIntro />
 	</Header>
 
-	<Footer id="gift" />
+	<GuideDetail />
+
+	<Footer id="guide" />
 </div>

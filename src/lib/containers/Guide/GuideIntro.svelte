@@ -8,7 +8,7 @@
 	};
 
 	const scrollIntoNavigation = (): void => {
-		document.getElementById("back-to-menu")?.scrollIntoView({
+		document.getElementById("schedule")?.scrollIntoView({
 			behavior: "smooth"
 		});
 	};
