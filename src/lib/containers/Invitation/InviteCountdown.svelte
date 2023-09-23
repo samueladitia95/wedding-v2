@@ -51,10 +51,10 @@
 
 <div class="relative min-h-screen min-w-full">
 	<div class="min-h-screen min-w-full bg-ro-brown pt-32">
-		<div class="2xl:container">
+		<div class="">
 			<div class="bg-ro-light-creme rounded-t-full h-[200px]" />
 			<div class="bg-ro-light-creme">
-				<div class="min-h-screen text-ro-black w-full flex flex-col justify-center items-center">
+				<div class="min-h-screen text-ro-black container flex flex-col justify-center items-center">
 					<div
 						class="flex flex-col gap-10"
 						use:inview={{
