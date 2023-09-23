@@ -10,7 +10,7 @@
 
 <div class="w-screen bg-ro-creme pt-24">
 	<div
-		class="bg-ro-light-creme rounded-t-full pt-48 min-h-[80vh]"
+		class="bg-ro-light-creme rounded-t-[9999px] pt-48 min-h-[80vh]"
 		use:inview={{
 			rootMargin: "0px",
 			unobserveOnEnter: true

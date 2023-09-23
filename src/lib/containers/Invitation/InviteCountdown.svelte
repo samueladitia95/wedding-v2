@@ -50,118 +50,126 @@
 </script>
 
 <div class="relative min-h-screen min-w-full">
-	<div class="min-h-screen min-w-full bg-ro-brown pt-32">
+	<div class="min-h-screen min-w-full bg-ro-brown pt-32 z-20">
 		<div class="">
-			<div class="bg-ro-light-creme rounded-t-full pt-40">
-				<div class="min-h-screen text-ro-black container flex flex-col justify-center items-center">
-					<div
-						class="flex flex-col gap-10"
-						use:inview={{
-							rootMargin: "0px",
-							unobserveOnEnter: true
-						}}
-						on:inview_change={handleChangeBrideGroom}
-					>
-						{#if isShowBrideGroom}
-							<!-- Groom -->
-							<div
-								class="text-center flex flex-col gap-2"
-								in:fly={{ y: -1000, duration: 2000, delay: 500 }}
-							>
-								<div class="text-4xl font-mirage">Raymond Winoto</div>
-								<div class="text-lg font-mirage">Son of Epi Sodie Winoto and Fenny Tjie</div>
-							</div>
+			<!-- Top Circle -->
+			<div class="bg-ro-light-creme rounded-t-full h-[210px] md:h-[410px]" />
+			<div class="bg-ro-light-creme min-h-screen pb-28 md:pb-0">
+				<div class="container">
+					<!-- Remember to move text every breakpoint -->
+					<div class="text-ro-black flex flex-col justify-start items-center">
+						<div
+							class="flex flex-col gap-10"
+							use:inview={{
+								rootMargin: "100px",
+								unobserveOnEnter: true
+							}}
+							on:inview_change={handleChangeBrideGroom}
+						>
+							{#if isShowBrideGroom}
+								<!-- Groom -->
+								<div
+									class="text-center flex flex-col gap-2"
+									in:fly={{ y: -1000, duration: 2000, delay: 500 }}
+								>
+									<div class="text-4xl font-mirage">Raymond Winoto</div>
+									<div class="text-lg font-mirage">Son of Epi Sodie Winoto and Fenny Tjie</div>
+								</div>
 
-							<div class="text-5xl font-alex text-center" in:fade={{ duration: 2000, delay: 500 }}>
-								&
-							</div>
+								<div
+									class="text-5xl font-alex text-center"
+									in:fade={{ duration: 2000, delay: 500 }}
+								>
+									&
+								</div>
 
-							<!-- Bride -->
+								<!-- Bride -->
+								<div
+									class="text-center flex flex-col gap-2 mb-36"
+									in:fly={{ y: 1000, duration: 2000, delay: 500 }}
+								>
+									<div class="text-4xl font-mirage">Olivia Virginia Halim</div>
+									<div class="text-lg font-mirage">Daughter of Rudy Halim and Helena Halim</div>
+								</div>
+							{/if}
+						</div>
+
+						{#if browser}
 							<div
-								class="text-center flex flex-col gap-2 mb-36"
-								in:fly={{ y: 1000, duration: 2000, delay: 500 }}
+								use:inview={{
+									rootMargin: "-100px",
+									unobserveOnEnter: true
+								}}
+								on:inview_change={handleChangeCarausel}
+								class="max-w-sm"
 							>
-								<div class="text-4xl font-mirage">Olivia Virginia Halim</div>
-								<div class="text-lg font-mirage">Daughter of Rudy Halim and Helena Halim</div>
+								{#if isShowCarausel}
+									<div in:fade={{ duration: 2000, delay: 500 }}>
+										<Splide
+											aria-label="invite countdown carausel"
+											extensions={{ AutoScroll }}
+											options={{
+												arrows: false,
+												pagination: false,
+												type: "loop",
+												gap: "16px",
+												autoScroll: {
+													rewind: true
+												}
+											}}
+										>
+											{#each carauselImages as image}
+												<SplideSlide>
+													<img
+														src={image}
+														alt="invite"
+														class="object-cover w-[307px] max-h-[336px] rounded"
+													/>
+												</SplideSlide>
+											{/each}
+										</Splide>
+									</div>
+								{/if}
 							</div>
 						{/if}
-					</div>
 
-					{#if browser}
 						<div
 							use:inview={{
 								rootMargin: "-100px",
 								unobserveOnEnter: true
 							}}
-							on:inview_change={handleChangeCarausel}
-							class="max-w-sm"
+							on:inview_change={handleChangeCountdown}
 						>
-							{#if isShowCarausel}
-								<div in:fade={{ duration: 2000, delay: 500 }}>
-									<Splide
-										aria-label="invite countdown carausel"
-										extensions={{ AutoScroll }}
-										options={{
-											arrows: false,
-											pagination: false,
-											type: "loop",
-											gap: "16px",
-											autoScroll: {
-												rewind: true
-											}
-										}}
-									>
-										{#each carauselImages as image}
-											<SplideSlide>
-												<img
-													src={image}
-													alt="invite"
-													class="object-cover w-[307px] max-h-[336px] rounded"
-												/>
-											</SplideSlide>
-										{/each}
-									</Splide>
+							{#if isShowCountdown}
+								<div
+									class="font-mirage text-xl text-center mb-20 mt-32"
+									in:fly={{ x: -1000, duration: 2000, delay: 500 }}
+								>
+									INVITE YOU TO THEIR WEDDING
+								</div>
+
+								<div
+									class="font-island text-ro-black text-4xl text-center mb-12"
+									in:fly={{ x: -1000, duration: 2000, delay: 1000 }}
+								>
+									<div>Friday,</div>
+									<div>17 November 2023</div>
+								</div>
+
+								<!-- Timer -->
+								<div
+									class="grid grid-cols-2 grid-rows-2 text-ro-brown gap-y-8 gap-x-4 max-w-[250px] mx-auto"
+									in:fly={{ x: -1000, duration: 2000, delay: 1500 }}
+								>
+									{#each countdowns as countdown}
+										<div class="flex flex-col justify-center items-center">
+											<div class="font-mirage text-5xl">{countdown.value}</div>
+											<div class="font-oakes">{countdown.type}(S)</div>
+										</div>
+									{/each}
 								</div>
 							{/if}
 						</div>
-					{/if}
-
-					<div
-						use:inview={{
-							rootMargin: "-100px",
-							unobserveOnEnter: true
-						}}
-						on:inview_change={handleChangeCountdown}
-					>
-						{#if isShowCountdown}
-							<div
-								class="font-mirage text-xl text-center mb-20 mt-32"
-								in:fly={{ x: -1000, duration: 2000, delay: 500 }}
-							>
-								INVITE YOU TO THEIR WEDDING
-							</div>
-
-							<div
-								class="font-island text-ro-black text-4xl text-center mb-12"
-								in:fly={{ x: -1000, duration: 2000, delay: 1000 }}
-							>
-								<div>Friday,</div>
-								<div>17 November 2023</div>
-							</div>
-
-							<!-- Timer -->
-							<div
-								class="grid grid-cols-2 grid-rows-2 text-ro-brown gap-y-8 gap-x-4 max-w-[250px] mx-auto pb-28"
-								in:fly={{ x: -1000, duration: 2000, delay: 1500 }}
-							>
-								{#each countdowns as countdown}
-									<div class="flex flex-col justify-center items-center">
-										<div class="font-mirage text-5xl">{countdown.value}</div>
-										<div class="font-oakes">{countdown.type}(S)</div>
-									</div>
-								{/each}
-							</div>
-						{/if}
 					</div>
 				</div>
 			</div>
