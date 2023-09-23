@@ -12,8 +12,8 @@
 		},
 		{
 			label: "Wedding Guide",
-			href: "/",
-			id: ""
+			href: "/guide",
+			id: "guide"
 		},
 		{
 			label: "Wishes For Us",
