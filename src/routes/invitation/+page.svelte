@@ -6,11 +6,11 @@
 </script>
 
 <div>
-	<Header>
+	<Header id="invitation">
 		<InviteIntro />
 	</Header>
 
 	<InviteCountdown />
 
-	<Footer />
+	<Footer id="invitation" />
 </div>

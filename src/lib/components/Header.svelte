@@ -3,6 +3,7 @@
 	import { inview } from "svelte-inview";
 	import { fade } from "svelte/transition";
 
+	export let id: string;
 	let isShow = false;
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
@@ -28,7 +29,7 @@
 
 				<!-- Close button -->
 				<a
-					href="/#invitation"
+					href="/#${id}"
 					on:click={() => {
 						isShowIntro.set(true);
 						isFromAnotherPage.set(true);

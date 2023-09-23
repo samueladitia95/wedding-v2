@@ -7,10 +7,10 @@
 </script>
 
 <div>
-	<Header>
+	<Header id="story">
 		<StoryIntro />
 	</Header>
 	<StoryVideo />
 	<StoryMain />
-	<Footer />
+	<Footer id="story" />
 </div>
