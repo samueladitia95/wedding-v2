@@ -51,10 +51,10 @@
 
 <div class="relative min-h-screen min-w-full">
 	<div class="min-h-screen min-w-full bg-ro-brown pt-32">
-		<div class="">
+		<div class="2xl:container">
 			<div class="bg-ro-light-creme rounded-t-full h-[200px]" />
 			<div class="bg-ro-light-creme">
-				<div class="container min-h-screen max-w-sm text-ro-black">
+				<div class="min-h-screen text-ro-black w-full flex flex-col justify-center items-center">
 					<div
 						class="flex flex-col gap-10"
 						use:inview={{
@@ -95,6 +95,7 @@
 								unobserveOnEnter: true
 							}}
 							on:inview_change={handleChangeCarausel}
+							class="max-w-sm"
 						>
 							{#if isShowCarausel}
 								<div in:fade={{ duration: 2000, delay: 500 }}>
