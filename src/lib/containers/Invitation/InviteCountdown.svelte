@@ -53,8 +53,7 @@
 	<div class="min-h-screen min-w-full bg-ro-brown pt-32 z-20">
 		<div class="">
 			<!-- Top Circle -->
-			<div class="bg-ro-light-creme rounded-t-full h-[210px] md:h-[410px]" />
-			<div class="bg-ro-light-creme min-h-screen pb-28 md:pb-0">
+			<div class="bg-ro-light-creme min-h-screen pb-28 rounded-t-full md:pt-40">
 				<div class="container">
 					<!-- Remember to move text every breakpoint -->
 					<div class="text-ro-black flex flex-col justify-start items-center">
