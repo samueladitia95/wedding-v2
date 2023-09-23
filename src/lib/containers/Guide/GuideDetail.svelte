@@ -1,4 +1,8 @@
 <script lang="ts">
+	import { inview } from "svelte-inview";
+	import { fade, fly } from "svelte/transition";
+
+	let isShow = false;
 	const schedules = [
 		{
 			activity: "HOLY MATRIMONY",
@@ -24,29 +28,60 @@
 			notes: "Join us for some day-drinking and music for an after wedding celebration."
 		}
 	];
+
+	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
+		if (!isShow && detail.inView) isShow = true;
+	};
 </script>
 
 <div class=" w-screen bg-ro-brown-light pt-20">
-	<div class="rounded-t-full min-h-screen bg-ro-light-creme text-ro-black">
+	<div
+		class="rounded-t-full min-h-screen bg-ro-light-creme text-ro-black"
+		use:inview={{
+			rootMargin: "-100px",
+			unobserveOnEnter: true
+		}}
+		on:inview_change={handleChange}
+	>
 		<div class="container pt-[200px]">
-			<!-- Title -->
-			<div class="text-center font-island text-3xl mb-10" id="schedule">The Details</div>
+			{#if isShow}
+				<!-- Title -->
+				<div
+					class="text-center font-island text-3xl mb-10"
+					id="schedule"
+					in:fade={{ duration: 1000, delay: 500 }}
+				>
+					The Details
+				</div>
+			{/if}
 
 			<!-- Schedules -->
 			<div class="flex flex-col justify-start items-center gap-10">
-				{#each schedules as schedule}
-					<div class="flex flex-col justify-start items-center text-center">
-						<div class="font-mirage text-xl leading-loose">{schedule.activity}</div>
-						<div class="font-mirage text-xl leading-loose">{schedule.time}</div>
-						<div class="font-mirage leading-loose">{schedule.location}</div>
-						{#if schedule.notes}
-							<div class="font-oakes text-xs font-light leading-loose">{schedule.notes}</div>
-						{/if}
-					</div>
+				{#each schedules as schedule, index}
+					{#if isShow}
+						<div
+							class="flex flex-col justify-start items-center text-center"
+							transition:fly={{ x: -1000, duration: 2000, delay: 500 * (index + 1) }}
+						>
+							<div class="font-mirage text-xl leading-loose">{schedule.activity}</div>
+							<div class="font-mirage text-xl leading-loose">{schedule.time}</div>
+							<div class="font-mirage leading-loose">{schedule.location}</div>
+							{#if schedule.notes}
+								<div class="font-oakes text-xs font-light leading-loose">{schedule.notes}</div>
+							{/if}
+						</div>
+					{/if}
 				{/each}
 			</div>
 
-			<img src="/images/guide_1.png" alt="logo" class="w-full h-full" />
+			{#if isShow}
+				<img
+					in:fade={{ duration: 1000, delay: 3000 }}
+					src="/images/guide_1.png"
+					alt="logo"
+					class="w-full h-full"
+				/>
+			{/if}
 		</div>
 	</div>
 </div>
