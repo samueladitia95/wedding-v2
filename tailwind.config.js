@@ -12,7 +12,8 @@ export default {
 				"ro-white": "#FFFFFF",
 				"ro-brown": "#4C4A44",
 				"ro-error": "#D10000",
-				"ro-nav": "rgba(29, 29, 27, 0.23)"
+				"ro-nav": "rgba(29, 29, 27, 0.23)",
+				"ro-brown-light": "#A99E92"
 			},
 			container: {
 				center: true,
