@@ -22,8 +22,8 @@
 		},
 		{
 			label: "Wedding Gift",
-			href: "/",
-			id: ""
+			href: "/gift",
+			id: "gift"
 		}
 	];
 </script>
