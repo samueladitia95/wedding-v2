@@ -10,6 +10,7 @@ export default {
 				"ro-creme": "#B7B0A8",
 				"ro-light-creme": "#F7F4EF",
 				"ro-white": "#FFFFFF",
+				"ro-white-70%": "rgba(255, 255, 255, 0.7)",
 				"ro-brown": "#4C4A44",
 				"ro-error": "#D10000",
 				"ro-nav": "rgba(29, 29, 27, 0.23)",

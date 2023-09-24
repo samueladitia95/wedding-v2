@@ -20,7 +20,7 @@
 		autocomplete="off"
 	/>
 	<div
-		class="after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-xs font-normal leading-tight transition-all after:absolute after:-bottom-1.5 after:block after:transition-transform after:duration-300 peer-placeholder-shown:text-sm peer-placeholder-shown:leading-[4.25] peer-focus:text-xs peer-focus:leading-tight peer-focus:text-ro-white text-ro-white font-oakes {error
+		class="after:content[' '] pointer-events-none absolute left-0 -top-1.5 flex h-full w-full select-none text-xs font-normal leading-tight transition-all after:absolute after:-bottom-1.5 after:block after:transition-transform after:duration-300 peer-placeholder-shown:text-base peer-placeholder-shown:leading-[4.25] peer-focus:text-xs peer-focus:leading-tight peer-focus:text-ro-white text-ro-white font-oakes {error
 			? 'text-bwi-error  peer-focus:text-bwi-error'
 			: 'text-ro-white'}"
 	>

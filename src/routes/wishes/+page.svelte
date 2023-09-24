@@ -8,6 +8,7 @@
 
 	let isShow = false;
 	let name = "";
+	let message = "";
 	let wishes = [
 		{
 			name: "John Doe",
@@ -62,7 +63,7 @@
 						<!-- FORM -->
 						<form class="mt-4 flex flex-col gap-4">
 							<Input name="name" label="Fill Your Name" bind:value={name} error={[]} />
-							<TextArea />
+							<TextArea name="message" label="Write your wishes" bind:value={message} error={[]} />
 							<button
 								type="submit"
 								class="font-mirage text-lg w-full rounded-full bg-[#F7F4EF] text-[#4C4A44] hover:bg-opacity-80 disabled:bg-opacity-50 py-3"
