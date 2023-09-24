@@ -75,7 +75,7 @@
 			<img
 				src="/images/start_mobile_1.jpg"
 				alt="main"
-				class="min-h-screen w-full object-cover"
+				class="min-h-screen xl:max-h-screen w-full object-cover"
 				in:fly={!isSkipAnimation ? { y: 2000, duration: 2000, delay: 500, easing: cubicOut } : {}}
 			/>
 
@@ -87,23 +87,25 @@
 
 			<!-- Content Text -->
 			<div
-				class="container absolute top-36 left-0 z-20 text-ro-white text-center"
+				class="absolute top-36 md:top-72 left-0 z-20 text-ro-white text-center w-screen"
 				in:fade={!isSkipAnimation ? { duration: 1000, delay: 3500 } : {}}
 			>
-				<div class="text-3xl font-mirage">
-					Let love be sincere; hate what is evil, hold on to what is good.
+				<div class="container flex flex-col justify-start items-center">
+					<div class="text-3xl md:text-4xl font-mirage max-w-xl">
+						Let love be sincere; hate what is evil, hold on to what is good.
+					</div>
+					<div class="font-island text-lg md:text-3xl">Roman 12:9</div>
 				</div>
-				<div class="font-island text-lg">Roman 12:9</div>
 			</div>
 
 			<!-- Action Container -->
 			<div
-				class="container absolute bottom-8 left-0 z-20"
+				class="w-screen absolute bottom-8 left-0 z-20"
 				in:fade={!isSkipAnimation ? { duration: 1000, delay: 2500 } : {}}
 			>
-				<div class="w-full flex justify-end items-center min-h-[48px]">
+				<div class="w-full pr-6 flex justify-end items-center min-h-[48px]">
 					<button
-						class="flex gap-2 items-center justify-center font-mirage text-xs text-ro-white border border-ro-white px-4 py-2 rounded-full"
+						class="flex gap-2 items-center justify-center font-mirage text-xs md:text-base text-ro-white border border-ro-white px-4 py-2 rounded-full"
 						on:click={() => scrollIntoNavigation()}
 					>
 						Scroll down

@@ -30,7 +30,7 @@
 
 <div class="bg-ro-light-creme">
 	<div
-		class="min-h-screen min-w-screen relative pt-16 pb-8 container flex flex-col justify-between items-stretch"
+		class="min-h-screen min-w-screen relative pt-16 pb-8 container flex flex-col justify-between items-stretch md:max-w-md"
 	>
 		<!-- Main Logo -->
 		<div class="w-full flex justify-center">
@@ -38,12 +38,12 @@
 		</div>
 
 		<!-- Nav Item -->
-		<div class="flex flex-col gap-6 text-4xl font-mirage">
+		<div class="flex flex-col gap-6 md:gap-12 text-4xl font-mirage">
 			{#each navItems as navItem, index}
 				<a
 					class="{index % 2 === 0
 						? 'text-left'
-						: 'text-right'} text-ro-nav hover:text-ro-brown cursor-pointer"
+						: 'text-right'} text-ro-nav hover:text-ro-brown cursor-pointer md:text-5xl"
 					href={navItem.href}
 					id={navItem.id}
 				>
