@@ -9,6 +9,7 @@
 </script>
 
 <div
+	id="dresscode"
 	class="w-screen min-h-[400px] bg-ro-brown-light py-24"
 	use:inview={{
 		rootMargin: "0px",
