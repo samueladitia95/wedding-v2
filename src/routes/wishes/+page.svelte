@@ -8,6 +8,28 @@
 
 	let isShow = false;
 	let name = "";
+	let wishes = [
+		{
+			name: "John Doe",
+			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+			createdAt: "Saturday, 13 May 2023  10:00"
+		},
+		{
+			name: "John Doe",
+			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+			createdAt: "Saturday, 13 May 2023  10:00"
+		},
+		{
+			name: "John Doe",
+			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+			createdAt: "Saturday, 13 May 2023  10:00"
+		},
+		{
+			name: "John Doe",
+			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+			createdAt: "Saturday, 13 May 2023  10:00"
+		}
+	];
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
@@ -47,6 +69,24 @@
 								>SEND</button
 							>
 						</form>
+
+						<!-- Commnets -->
+						<div class="py-20">
+							<div class="flex flex-col gap-8 justify-start items-center">
+								{#each wishes as wish}
+									<div class="flex flex-col justify-start items-start gap-4">
+										<div class="font-mirage text-ro-light-creme">{wish.name}</div>
+										<div class="font-oakes text-ro-white text-sm">{wish.comment}</div>
+										<div class="font-oakes text-ro-light-creme text-xs">{wish.createdAt}</div>
+									</div>
+								{/each}
+							</div>
+							<button
+								class="mt-8 font-mirage text-lg w-full rounded-full hover:bg-opacity-80 disabled:bg-opacity-50 py-3 text-ro-light-creme border border-ro-light-creme"
+							>
+								More
+							</button>
+						</div>
 					</div>
 				</div>
 			{/if}
