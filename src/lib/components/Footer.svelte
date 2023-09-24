@@ -6,7 +6,7 @@
 <div class="flex items-center justify-center py-11 bg-ro-creme z-50 relative" id="back-to-menu">
 	<a
 		href="/#{id}"
-		class="flex items-center justify-center gap-2"
+		class="flex items-center justify-center gap-2 md:gap-4"
 		on:click={() => {
 			isShowIntro.set(true);
 			isFromAnotherPage.set(true);
@@ -20,6 +20,6 @@
 				fill="white"
 			/>
 		</svg>
-		<div class="font-mirage text-lg text-ro-white">Back to Menu</div>
+		<div class="font-mirage text-lg md:text-2xl text-ro-white">Back to Menu</div>
 	</a>
 </div>

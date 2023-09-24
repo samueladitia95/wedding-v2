@@ -53,12 +53,12 @@
 	<div class="min-h-screen min-w-full bg-ro-brown pt-32 z-20">
 		<div class="">
 			<!-- Top Circle -->
-			<div class="bg-ro-light-creme min-h-screen pb-28 rounded-t-full pt-48">
+			<!-- Remember to move text every breakpoint -->
+			<div class="bg-ro-light-creme min-h-screen pb-28 rounded-t-full pt-48 md:pt-80">
 				<div class="container">
-					<!-- Remember to move text every breakpoint -->
 					<div class="text-ro-black flex flex-col justify-start items-center">
 						<div
-							class="flex flex-col gap-10"
+							class="flex flex-col gap-10 mb-36 md:mb-24"
 							use:inview={{
 								rootMargin: "100px",
 								unobserveOnEnter: true
@@ -71,12 +71,14 @@
 									class="text-center flex flex-col gap-2"
 									in:fly={{ y: -1000, duration: 2000, delay: 500 }}
 								>
-									<div class="text-4xl font-mirage">Raymond Winoto</div>
-									<div class="text-lg font-mirage">Son of Epi Sodie Winoto and Fenny Tjie</div>
+									<div class="text-4xl md:text-5xl font-mirage">Raymond Winoto</div>
+									<div class="text-lg md:text-2xl font-mirage">
+										Son of Epi Sodie Winoto and Fenny Tjie
+									</div>
 								</div>
 
 								<div
-									class="text-5xl font-alex text-center"
+									class="text-5xl md:text-7xl font-alex text-center"
 									in:fade={{ duration: 2000, delay: 500 }}
 								>
 									&
@@ -84,11 +86,13 @@
 
 								<!-- Bride -->
 								<div
-									class="text-center flex flex-col gap-2 mb-36"
+									class="text-center flex flex-col gap-2"
 									in:fly={{ y: 1000, duration: 2000, delay: 500 }}
 								>
-									<div class="text-4xl font-mirage">Olivia Virginia Halim</div>
-									<div class="text-lg font-mirage">Daughter of Rudy Halim and Helena Halim</div>
+									<div class="text-4xl md:text-5xl font-mirage">Olivia Virginia Halim</div>
+									<div class="text-lg md:text-2xl font-mirage">
+										Daughter of Rudy Halim and Helena Halim
+									</div>
 								</div>
 							{/if}
 						</div>
@@ -100,10 +104,9 @@
 									unobserveOnEnter: true
 								}}
 								on:inview_change={handleChangeCarausel}
-								class="max-w-sm"
 							>
 								{#if isShowCarausel}
-									<div in:fade={{ duration: 2000, delay: 500 }}>
+									<div in:fade={{ duration: 2000, delay: 500 }} class="w-screen">
 										<Splide
 											aria-label="invite countdown carausel"
 											extensions={{ AutoScroll }}
@@ -114,7 +117,8 @@
 												gap: "16px",
 												autoScroll: {
 													rewind: true
-												}
+												},
+												autoWidth: true
 											}}
 										>
 											{#each carauselImages as image}
@@ -122,7 +126,7 @@
 													<img
 														src={image}
 														alt="invite"
-														class="object-cover w-[307px] max-h-[336px] rounded"
+														class="object-cover w-[350px] max-h-[350px] md:w-[450px] md:max-h-[450px] rounded"
 													/>
 												</SplideSlide>
 											{/each}
@@ -141,14 +145,14 @@
 						>
 							{#if isShowCountdown}
 								<div
-									class="font-mirage text-xl text-center mb-20 mt-32"
+									class="font-mirage text-xl md:text-3xl text-center mb-20 mt-32"
 									in:fly={{ x: -1000, duration: 2000, delay: 500 }}
 								>
 									INVITE YOU TO THEIR WEDDING
 								</div>
 
 								<div
-									class="font-island text-ro-black text-4xl text-center mb-12"
+									class="font-island text-ro-black text-4xl md:text-5xl text-center mb-12"
 									in:fly={{ x: -1000, duration: 2000, delay: 1000 }}
 								>
 									<div>Friday,</div>
@@ -157,7 +161,7 @@
 
 								<!-- Timer -->
 								<div
-									class="grid grid-cols-2 grid-rows-2 text-ro-brown gap-y-8 gap-x-4 max-w-[250px] mx-auto"
+									class="grid grid-cols-2 md:grid-cols-4 grid-rows-2 md:grid-rows-none text-ro-brown gap-y-8 gap-x-4 max-w-[250px] md:max-w-3xl mx-auto"
 									in:fly={{ x: -1000, duration: 2000, delay: 1500 }}
 								>
 									{#each countdowns as countdown}
