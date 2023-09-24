@@ -15,7 +15,7 @@
 </script>
 
 <div
-	class="min-h-screen w-screen bg-ro-brown"
+	class="min-h-screen w-screen bg-ro-black"
 	use:inview={{
 		rootMargin: "-100px",
 		unobserveOnEnter: true
@@ -24,7 +24,9 @@
 >
 	{#if isShow}
 		<div class="container">
-			<div class="text-center font-mirage text-xl text-ro-white pt-36 leading-relaxed">
+			<div
+				class="text-center font-mirage text-xl md:text-2xl text-ro-white pt-36 leading-relaxed md:px-12"
+			>
 				We were classmates and lab partners back in college year 2013 who hated each other for a
 				year until we started snapchat-ing and going on coffee dates.
 			</div>
@@ -42,7 +44,8 @@
 								gap: "16px",
 								autoScroll: {
 									rewind: true
-								}
+								},
+								autoWidth: true
 							}}
 						>
 							{#each carauselImages as image}
@@ -50,7 +53,7 @@
 									<img
 										src={image}
 										alt="invite"
-										class="object-cover w-[450px] max-h-[354px] rounded"
+										class="object-cover w-[350px] max-h-[350px] md:w-[450px] md:max-h-[450px] rounded"
 									/>
 								</SplideSlide>
 							{/each}
