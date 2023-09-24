@@ -48,12 +48,12 @@
 			<img
 				src="/icons/front-logo.svg"
 				alt="main logo"
-				class="w-36 h-36 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+				class="w-36 h-36 xl:w-48 xl:h-48 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
 				in:fade={{ duration: 2000 }}
 				out:fade={{ duration: 1000 }}
 			/>
 			<button
-				class="text-ro-brown bg-ro-white text-lg whitespace-nowrap rounded-full px-10 py-4 font-mirage absolute bottom-36 left-1/2 transform -translate-x-1/2"
+				class="text-ro-brown bg-ro-white text-lg whitespace-nowrap rounded-full px-10 py-4 font-mirage absolute bottom-36 md:bottom-48 lg:bottom-60 left-1/2 transform -translate-x-1/2"
 				in:fade={{ duration: 2000, delay: 2000 }}
 				out:fade={{ duration: 1000 }}
 				on:click={() => {
