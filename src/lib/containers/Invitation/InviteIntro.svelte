@@ -28,8 +28,10 @@
 	{#if isShow}
 		<div class="absolute z-20 min-h-screen min-w-full" in:fade={{ duration: 2000, delay: 500 }}>
 			<!-- Main Section -->
-			<div class="container min-h-screen min-w-full">
-				<div class="text-2xl font-mirage text-center text-ro-white leading-relaxed pt-44 px-12">
+			<div class="container min-h-screen min-w-full flex flex-col items-center">
+				<div
+					class="text-2xl md:text-5xl md:leading-normal md:max-w-xl font-mirage text-center text-ro-white leading-relaxed pt-44 px-12"
+				>
 					Together with their their loving families
 				</div>
 			</div>

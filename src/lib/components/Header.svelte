@@ -21,11 +21,11 @@
 	<div class="relative">
 		{#if isShow}
 			<div
-				class="w-full flex justify-between items-center text-ro-white absolute top-0 z-40 pt-10 container xl:max-w-none"
+				class="w-full flex justify-between items-center text-ro-white absolute top-0 z-40 pt-10 container max-w-none"
 				in:fade={{ duration: 2000, delay: 500 }}
 			>
 				<!-- Main Logo -->
-				<img src="/images/logo_white_2.png" alt="logo" class="w-12 h-12" />
+				<img src="/images/logo_white_2.png" alt="logo" class="w-12 h-12 md:w-16 md:h-16" />
 
 				<!-- Close button -->
 				<a
@@ -35,7 +35,7 @@
 						isFromAnotherPage.set(true);
 					}}
 				>
-					<img src="/icons/close-white.svg" alt="close" class="w-8 h-8" />
+					<img src="/icons/close-white.svg" alt="close" class="w-8 h-8 md:w-12 md:h-12" />
 				</a>
 			</div>
 		{/if}
