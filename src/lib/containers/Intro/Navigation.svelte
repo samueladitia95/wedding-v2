@@ -17,8 +17,8 @@
 		},
 		{
 			label: "Wishes For Us",
-			href: "/",
-			id: ""
+			href: "/wishes",
+			id: "wishes"
 		},
 		{
 			label: "Wedding Gift",
