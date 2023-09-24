@@ -21,7 +21,7 @@
 	<div class="relative">
 		{#if isShow}
 			<div
-				class="w-full flex justify-between items-center text-ro-white absolute top-0 z-40 pt-10 container"
+				class="w-full flex justify-between items-center text-ro-white absolute top-0 z-40 pt-10 container xl:max-w-none"
 				in:fade={{ duration: 2000, delay: 500 }}
 			>
 				<!-- Main Logo -->

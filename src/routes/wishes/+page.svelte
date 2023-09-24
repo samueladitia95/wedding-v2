@@ -38,7 +38,7 @@
 <div>
 	<Header id="wishes">
 		<div
-			class="relative min-h-screen min-w-full"
+			class="relative min-h-screen"
 			use:inview={{
 				rootMargin: "0px",
 				unobserveOnEnter: true
@@ -46,9 +46,9 @@
 			on:inview_change={handleChange}
 		>
 			{#if isShow}
-				<div class="z-20 min-h-screen min-w-full bg-ro-black">
+				<div class="z-20 min-h-screen bg-ro-black">
 					<!-- Main Section -->
-					<div class="container min-h-screen min-w-full pt-40">
+					<div class="container pt-40 max-w-3xl">
 						<div in:fly={{ x: -1000, duration: 2000, delay: 500 }}>
 							<img src="/icons/full-name-white.svg" alt="full name" class="w-44 h-[20px] mb-2" />
 						</div>
@@ -72,7 +72,7 @@
 
 						<!-- Commnets -->
 						<div class="py-20">
-							<div class="flex flex-col gap-8 justify-start items-center">
+							<div class="flex flex-col gap-8 justify-start items-start">
 								{#each wishes as wish}
 									<div class="flex flex-col justify-start items-start gap-4">
 										<div class="font-mirage text-ro-light-creme">{wish.name}</div>
