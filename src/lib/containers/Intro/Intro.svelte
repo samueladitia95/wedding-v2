@@ -76,19 +76,19 @@
 				src="/images/start_mobile_1.jpg"
 				alt="main"
 				class="min-h-screen xl:max-h-screen w-full object-cover"
-				in:fly={!isSkipAnimation ? { y: 2000, duration: 2000, delay: 500, easing: cubicOut } : {}}
+				in:fly={!isSkipAnimation ? { y: 3000, duration: 2000, delay: 500, easing: cubicOut } : {}}
 			/>
 
 			<!-- Gradient Layer -->
 			<div
 				class="h-full w-full absolute top-0 left-0 z-10 gradient-layer"
-				in:fly={!isSkipAnimation ? { y: 2000, duration: 2000, delay: 500, easing: cubicOut } : {}}
+				in:fly={!isSkipAnimation ? { y: 3000, duration: 2000, delay: 500, easing: cubicOut } : {}}
 			/>
 
 			<!-- Content Text -->
 			<div
 				class="absolute top-36 md:top-72 left-0 z-20 text-ro-white text-center w-screen"
-				in:fade={!isSkipAnimation ? { duration: 1000, delay: 3500 } : {}}
+				in:fade={!isSkipAnimation ? { duration: 1000, delay: 2500 } : {}}
 			>
 				<div class="container flex flex-col justify-start items-center">
 					<div class="text-3xl md:text-4xl font-mirage max-w-xl">
