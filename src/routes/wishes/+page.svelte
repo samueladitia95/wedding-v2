@@ -51,10 +51,14 @@
 					<!-- Main Section -->
 					<div class="container pt-40 max-w-3xl">
 						<div in:fly={{ x: -1000, duration: 2000, delay: 500 }}>
-							<img src="/icons/full-name-white.svg" alt="full name" class="w-44 h-[20px] mb-2" />
+							<img
+								src="/icons/full-name-white.svg"
+								alt="full name"
+								class="w-44 md:w-72 h-[20px] md:h-[30px] mb-2"
+							/>
 						</div>
 						<div
-							class="text-left text-ro-white leading-relaxed font-mirage text-3xl"
+							class="text-left text-ro-white leading-relaxed font-mirage text-3xl md:text-6xl"
 							in:fade={{ duration: 2000, delay: 2000 }}
 						>
 							WISHES FOR US
@@ -66,24 +70,26 @@
 							<TextArea name="message" label="Write your wishes" bind:value={message} error={[]} />
 							<button
 								type="submit"
-								class="font-mirage text-lg w-full rounded-full bg-[#F7F4EF] text-[#4C4A44] hover:bg-opacity-80 disabled:bg-opacity-50 py-3"
+								class="font-mirage text-lg md:text-xl w-full rounded-full bg-[#F7F4EF] text-[#4C4A44] hover:bg-opacity-80 disabled:bg-opacity-50 py-3"
 								>SEND</button
 							>
 						</form>
 
 						<!-- Commnets -->
 						<div class="py-20">
-							<div class="flex flex-col gap-8 justify-start items-start">
+							<div class="flex flex-col gap-8 md:gap-10 justify-start items-start">
 								{#each wishes as wish}
 									<div class="flex flex-col justify-start items-start gap-4">
-										<div class="font-mirage text-ro-light-creme">{wish.name}</div>
-										<div class="font-oakes text-ro-white text-sm">{wish.comment}</div>
-										<div class="font-oakes text-ro-light-creme text-xs">{wish.createdAt}</div>
+										<div class="font-mirage text-ro-light-creme md:text-2xl">{wish.name}</div>
+										<div class="font-oakes text-ro-white text-sm md:text-xl">{wish.comment}</div>
+										<div class="font-oakes text-ro-light-creme text-xs md:text-sm">
+											{wish.createdAt}
+										</div>
 									</div>
 								{/each}
 							</div>
 							<button
-								class="mt-8 font-mirage text-lg w-full rounded-full hover:bg-opacity-80 disabled:bg-opacity-50 py-3 text-ro-light-creme border border-ro-light-creme"
+								class="mt-8 font-mirage text-lg md:text-xl w-full rounded-full hover:bg-opacity-80 disabled:bg-opacity-50 py-3 text-ro-light-creme border border-ro-light-creme"
 							>
 								More
 							</button>
