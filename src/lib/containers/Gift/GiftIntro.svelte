@@ -34,26 +34,33 @@
 		<div class="absolute z-20 min-h-screen min-w-full" in:fade={{ duration: 2000, delay: 500 }}>
 			<!-- Main Section -->
 			<div class="container min-h-screen min-w-full pt-80">
-				<div in:fly={{ x: -1000, duration: 2000, delay: 500 }}>
-					<img src="/icons/full-name-white.svg" alt="full name" class="w-44 h-[20px]" />
+				<div
+					in:fly={{ x: -1000, duration: 2000, delay: 500 }}
+					class="flex justify-start md:justify-center"
+				>
+					<img
+						src="/icons/full-name-white.svg"
+						alt="full name"
+						class="w-44 h-[20px] md:w-[282px] md:h-[30px]"
+					/>
 				</div>
 				<div
-					class="text-left text-ro-white leading-relaxed font-mirage text-4xl"
+					class="text-left md:text-center text-ro-white leading-normal font-mirage text-5xl md:text-6xl md:px-24 md:leading-normal md:mt-4"
 					in:fade={{ duration: 2000, delay: 2000 }}
 				>
-					Your presence at Our<span class="font-island text-5xl mr-4">Wedding </span> is truly the greatest
-					gift of all
+					Your presence at Our<span class="font-island text-5xl md:text-7xl mr-4">Wedding </span> is
+					truly the greatest gift of all
 				</div>
 			</div>
 
 			<!-- Action Container -->
 			<div
-				class="container absolute bottom-8 left-0 z-20"
+				class="w-screen pr-6 absolute bottom-8 left-0 z-20"
 				in:fade={{ duration: 1000, delay: 2500 }}
 			>
 				<div class="w-full flex justify-end items-center min-h-[48px]">
 					<button
-						class="flex gap-2 items-center justify-center font-mirage text-xs text-ro-white border border-ro-white px-4 py-2 rounded-full"
+						class="flex gap-2 items-center justify-center font-mirage text-xs md:text-base text-ro-white border border-ro-white px-4 py-2 rounded-full"
 						on:click={() => scrollIntoNavigation()}
 					>
 						Scroll down
