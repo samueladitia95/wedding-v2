@@ -43,11 +43,13 @@
 		}}
 		on:inview_change={handleChange}
 	>
-		<div class="container pt-[200px]">
+		<div
+			class="container pt-[200px] md:pt-[280px] xl:pt-[200px] xl:flex xl:flex-col xl:items-center"
+		>
 			{#if isShow}
 				<!-- Title -->
 				<div
-					class="text-center font-island text-3xl mb-10"
+					class="text-center font-island text-3xl md:text-5xl mb-10 md:mb-20"
 					id="schedule"
 					in:fade={{ duration: 1000, delay: 500 }}
 				>
@@ -56,18 +58,22 @@
 			{/if}
 
 			<!-- Schedules -->
-			<div class="flex flex-col justify-start items-center gap-10">
+			<div
+				class="flex flex-col justify-start items-center gap-y-10 md:grid md:grid-rows-2 md:grid-cols-2 md:gap-x-8 xl:max-w-3xl"
+			>
 				{#each schedules as schedule, index}
 					{#if isShow}
 						<div
-							class="flex flex-col justify-start items-center text-center"
+							class="flex flex-col justify-start items-center text-center md:gap-2 md:self-start"
 							transition:fly={{ x: -1000, duration: 2000, delay: 500 * (index + 1) }}
 						>
-							<div class="font-mirage text-xl leading-loose">{schedule.activity}</div>
-							<div class="font-mirage text-xl leading-loose">{schedule.time}</div>
-							<div class="font-mirage leading-loose">{schedule.location}</div>
+							<div class="font-mirage text-xl md:text-3xl leading-loose">{schedule.activity}</div>
+							<div class="font-mirage text-xl md:text-3xl leading-loose">{schedule.time}</div>
+							<div class="font-mirage md:text-2xl leading-loose">{schedule.location}</div>
 							{#if schedule.notes}
-								<div class="font-oakes text-xs font-light leading-loose">{schedule.notes}</div>
+								<div class="font-oakes text-xs md:text-sm font-light leading-loose">
+									{schedule.notes}
+								</div>
 							{/if}
 						</div>
 					{/if}
@@ -75,12 +81,9 @@
 			</div>
 
 			{#if isShow}
-				<img
-					in:fade={{ duration: 1000, delay: 3000 }}
-					src="/images/guide_1.png"
-					alt="logo"
-					class="w-full h-full"
-				/>
+				<div class="flex justify-center" in:fade={{ duration: 1000, delay: 3000 }}>
+					<img src="/images/guide_1.png" alt="logo" class="w-full h-full max-w-[711px] xl:-mb-20" />
+				</div>
 			{/if}
 		</div>
 	</div>
