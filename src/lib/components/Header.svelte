@@ -29,7 +29,7 @@
 
 				<!-- Close button -->
 				<a
-					href="/#${id}"
+					href="/#{id}"
 					on:click={() => {
 						isShowIntro.set(true);
 						isFromAnotherPage.set(true);
