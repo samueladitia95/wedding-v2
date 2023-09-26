@@ -22,29 +22,31 @@
 	on:inview_change={handleChange}
 >
 	{#if isShow}
-		<div class="container">
+		<div class="container max-w-2xl xl:pb-20">
 			<div
 				class="font-mirage text-lg text-ro-white text-center flex flex-col justify-start items-center gap-20"
 			>
-				<div class="font-island text-3xl" in:fade={{ duration: 1000, delay: 500 }}>
+				<div class="font-island text-3xl md:text-5xl" in:fade={{ duration: 1000, delay: 500 }}>
 					The Location
 				</div>
 
 				<img
 					src="/images/guide_2.png"
 					alt="full name"
-					class="w-full h-[300px]"
+					class="w-full max-h-[300px] md:max-h-[520px]"
 					in:fade={{ duration: 1000, delay: 1000 }}
 				/>
 
 				<div in:fade={{ duration: 1000, delay: 1500 }}>
-					<div class="text-lg leading-relaxed">Canna Nusa Dua Bali</div>
-					<div class="text-sm leading-relaxed">
+					<div class="text-lg md:text-2xl leading-relaxed md:leading-loose">
+						Canna Nusa Dua Bali
+					</div>
+					<div class="text-sm md:text-lg leading-relaxed md:leading-loose">
 						Jl. Raya Nusa Dua Selatan, Benoa, Kec. Kuta Sel., Kabupaten Badung, Bali.
 					</div>
 				</div>
 				<button
-					class="flex gap-2 items-center justify-center font-mirage text-xs border text-ro-white border-ro-white px-4 py-2 rounded-full"
+					class="flex gap-2 items-center justify-center font-mirage text-xs md:text-base border text-ro-white border-ro-white px-4 py-2 rounded-full"
 					on:click={() => scrollIntoNavigation()}
 					in:fade={{ duration: 1000, delay: 2000 }}
 				>
