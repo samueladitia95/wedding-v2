@@ -15,7 +15,7 @@
 </script>
 
 <div
-	class="min-h-screen w-screen bg-ro-black"
+	class="min-h-screen md:min-h-[90vh] w-screen bg-ro-black"
 	use:inview={{
 		rootMargin: "-100px",
 		unobserveOnEnter: true
