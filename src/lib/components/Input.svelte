@@ -16,7 +16,6 @@
 		type="text"
 		{name}
 		bind:value
-		required
 		autocomplete="off"
 	/>
 	<div

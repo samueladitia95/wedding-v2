@@ -15,7 +15,6 @@
 			? 'border-t-transparent'
 			: ''}"
 		placeholder=" "
-		required
 		autocomplete="off"
 	/>
 	<div

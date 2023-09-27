@@ -1,14 +1,14 @@
 <script lang="ts">
+	import { _schemaComments } from "$lib";
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
 	import Input from "$lib/components/Input.svelte";
 	import TextArea from "$lib/components/TextArea.svelte";
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
+	import { superForm, superValidateSync } from "sveltekit-superforms/client";
 
 	let isShow = false;
-	let name = "";
-	let message = "";
 	let wishes = [
 		{
 			name: "John Doe",
@@ -31,9 +31,20 @@
 			createdAt: "Saturday, 13 May 2023  10:00"
 		}
 	];
+
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
+
+	const { form, errors, enhance } = superForm(superValidateSync(_schemaComments), {
+		SPA: true,
+		validators: _schemaComments,
+		onUpdate({ form }) {
+			if (form.valid) {
+				// TODO Send the form here
+			}
+		}
+	});
 </script>
 
 <div>
@@ -65,9 +76,24 @@
 						</div>
 
 						<!-- FORM -->
-						<form class="mt-4 flex flex-col gap-4">
-							<Input name="name" label="Fill Your Name" bind:value={name} error={[]} />
-							<TextArea name="message" label="Write your wishes" bind:value={message} error={[]} />
+						<form
+							in:fade={{ duration: 2000, delay: 2000 }}
+							class="mt-4 flex flex-col gap-4"
+							method="post"
+							use:enhance
+						>
+							<Input
+								name="name"
+								label="Fill Your Name"
+								bind:value={$form.name}
+								error={$errors.name}
+							/>
+							<TextArea
+								name="comment"
+								label="Write your wishes"
+								bind:value={$form.comment}
+								error={$errors.comment}
+							/>
 							<button
 								type="submit"
 								class="font-mirage text-lg md:text-xl w-full rounded-full bg-[#F7F4EF] text-[#4C4A44] hover:bg-opacity-80 disabled:bg-opacity-50 py-3"
@@ -76,7 +102,7 @@
 						</form>
 
 						<!-- Commnets -->
-						<div class="py-20">
+						<div class="py-20" in:fly={{ x: -1000, duration: 2000, delay: 2500 }}>
 							<div class="flex flex-col gap-8 md:gap-10 justify-start items-start">
 								{#each wishes as wish}
 									<div class="flex flex-col justify-start items-start gap-4">
