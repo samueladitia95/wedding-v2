@@ -23,13 +23,17 @@
 				class="font-mirage text-lg text-ro-white text-center flex flex-col justify-center items-center gap-6"
 				in:fade={{ duration: 1000, delay: 500 }}
 			>
-				<div class="font-island text-3xl">The Dresscode</div>
-				<div class="text-xl leading-relaxed">
-					Semi Formal, No Batik, Soft colour or earth tones dresses.
-				</div>
-				<div class="text-xl leading-relaxed">
-					The event is from morning to sunset so please mind the sun and hot weather, you may not
-					need your suits or long sleeved/thick dresses.
+				<div class="font-island text-3xl md:text-5xl">The Dresscode</div>
+				<div class="flex justify-center">
+					<div class="max-w-md">
+						<div class="text-xl md:text-2xl leading-relaxed">
+							Semi Formal, No Batik, Soft colour or earth tones dresses.
+						</div>
+						<div class="text-xl md:text-2xl leading-relaxed mt-10">
+							The event is from morning to sunset so please mind the sun and hot weather, you may
+							not need your suits or long sleeved/thick dresses.
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
