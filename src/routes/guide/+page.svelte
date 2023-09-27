@@ -6,6 +6,7 @@
 	import GuideDresscode from "$lib/containers/Guide/GuideDresscode.svelte";
 	import GuideIntro from "$lib/containers/Guide/GuideIntro.svelte";
 	import GuideLocation from "$lib/containers/Guide/GuideLocation.svelte";
+	import GuideRsvp from "$lib/containers/Guide/GuideRsvp.svelte";
 </script>
 
 <div>
@@ -17,6 +18,7 @@
 	<GuideLocation />
 	<GuideDresscode />
 	<GuideAccomodation />
+	<GuideRsvp />
 
 	<Footer id="guide" />
 </div>

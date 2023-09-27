@@ -12,7 +12,7 @@ export default {
 				"ro-white": "#FFFFFF",
 				"ro-white-70%": "rgba(255, 255, 255, 0.7)",
 				"ro-brown": "#4C4A44",
-				"ro-error": "#D10000",
+				"ro-error": "#FF3E3E",
 				"ro-nav": "rgba(29, 29, 27, 0.23)",
 				"ro-brown-light": "#A99E92"
 			},

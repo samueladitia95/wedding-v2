@@ -25,7 +25,7 @@
 	</div>
 
 	{#if error && error.length}
-		<div transition:fly={{ y: -20, duration: 300 }} class="text-xs text-bwi-error pt-2">
+		<div transition:fly={{ y: -20, duration: 300 }} class="text-xs text-ro-error pt-2">
 			{error[0]}
 		</div>
 	{/if}
