@@ -46,21 +46,21 @@
 						The Accomodations
 					</div>
 
-					<div class="flex flex-col gap-10 justify-start items-center px-4 font-mirage">
+					<div class="flex flex-col gap-10 justify-start items-center px-2 font-mirage">
 						{#each accomodations as accomodation}
 							<div>
 								{#if accomodation.logo}
-									<div class="flex items-center justify-center mb-55">
+									<div class="flex items-center justify-center mb-8 md:mb-14">
 										<img src={accomodation.logo} alt="accomodation" class="h-[100px]" />
 									</div>
 								{/if}
-								<div class="text-xl mb-7">{accomodation.subject}</div>
-								<div class="text-xl mb-2">{accomodation.location}</div>
+								<div class="text-xl mb-6">{accomodation.subject}</div>
+								<div class="text-xl mb-1">{accomodation.location}</div>
 								{#if accomodation.address}
-									<div class="text-sm mb-2">{accomodation.address}</div>
+									<div class="text-sm mb-1">{accomodation.address}</div>
 								{/if}
 								{#if accomodation.time}
-									<div class="text-lg mb-2">{accomodation.time}</div>
+									<div class="text-lg mb-1">{accomodation.time}</div>
 								{/if}
 							</div>
 						{/each}
