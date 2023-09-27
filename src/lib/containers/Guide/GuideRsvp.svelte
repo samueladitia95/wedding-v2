@@ -5,9 +5,9 @@
 	let name: string;
 	let phone: string;
 	let email: string;
-	let isAttending: boolean;
-	let isDate: boolean;
-	let isAccomodation: boolean;
+	// let isAttending: boolean;
+	// let isDate: boolean;
+	// let isAccomodation: boolean;
 	let allergies: string;
 </script>
 
