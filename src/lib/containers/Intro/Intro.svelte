@@ -91,10 +91,12 @@
 				in:fade={!isSkipAnimation ? { duration: 1000, delay: 2500 } : {}}
 			>
 				<div class="container flex flex-col justify-start items-center">
-					<div class="text-3xl md:text-4xl font-mirage max-w-xl">
+					<div class="text-3xl md:text-4xl leading-normal md:leading-normal font-mirage max-w-xl">
 						Let love be sincere; hate what is evil, hold on to what is good.
 					</div>
-					<div class="font-island text-lg md:text-3xl">Roman 12:9</div>
+					<div class="font-island text-lg md:text-3xl leading-normal md:leading-normal">
+						Roman 12:9
+					</div>
 				</div>
 			</div>
 

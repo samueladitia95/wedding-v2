@@ -22,7 +22,7 @@
 	on:inview_change={handleChange}
 >
 	{#if isShow}
-		<div class="container max-w-2xl xl:pb-20">
+		<div class="container max-w-2xl md:pb-20">
 			<div
 				class="font-mirage text-lg text-ro-white text-center flex flex-col justify-start items-center gap-20"
 			>
