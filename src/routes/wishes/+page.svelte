@@ -8,7 +8,7 @@
 	import { fade, fly } from "svelte/transition";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
 
-	let isShow = false;
+	let isShow: boolean = false;
 	let wishes = [
 		{
 			name: "John Doe",
@@ -31,16 +31,19 @@
 			createdAt: "Saturday, 13 May 2023  10:00"
 		}
 	];
+	let isSuccess: boolean = false;
 
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
 
-	const { form, errors, enhance } = superForm(superValidateSync(_schemaComments), {
+	const { form, errors, enhance, reset } = superForm(superValidateSync(_schemaComments), {
 		SPA: true,
 		validators: _schemaComments,
 		onUpdate({ form }) {
 			if (form.valid) {
+				isSuccess = true;
+				reset();
 				// TODO Send the form here
 			}
 		}
@@ -97,8 +100,9 @@
 							<button
 								type="submit"
 								class="font-mirage text-lg md:text-xl w-full rounded-full bg-[#F7F4EF] text-[#4C4A44] hover:bg-opacity-80 disabled:bg-opacity-50 py-3"
-								>SEND</button
 							>
+								SEND
+							</button>
 						</form>
 
 						<!-- Commnets -->
