@@ -68,7 +68,7 @@
 							<img
 								src="/icons/full-name-white.svg"
 								alt="full name"
-								class="w-44 md:w-72 h-[20px] md:h-[30px] mb-2"
+								class=" h-[22px] md:h-[32px] mb-2"
 							/>
 						</div>
 						<div
