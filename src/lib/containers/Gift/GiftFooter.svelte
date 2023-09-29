@@ -14,7 +14,7 @@
 
 <div class="w-screen bg-ro-creme pt-24 xl:flex xl:justify-center">
 	<div
-		class="bg-ro-light-creme rounded-t-full pt-48 md:pt-80 min-h-[80vh] xl:min-w-[1440px] 2xl:min-w-[1600px] xl:max-w-[1600px]"
+		class="bg-ro-light-creme rounded-t-full pt-48 pb-28 md:pt-72 min-h-[80vh] xl:min-w-[1440px] 2xl:min-w-[1600px] xl:max-w-[1600px]"
 		use:inview={{
 			rootMargin: "0px",
 			unobserveOnEnter: true
