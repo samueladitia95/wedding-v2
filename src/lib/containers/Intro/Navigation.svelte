@@ -1,4 +1,5 @@
 <script lang="ts">
+	// States
 	const navItems = [
 		{
 			label: "We Invite You",

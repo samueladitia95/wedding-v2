@@ -5,7 +5,7 @@
 	import { cubicOut } from "svelte/easing";
 	import { isFromAnotherPage, isPlay, isShowIntro } from "$lib/store";
 
-	// State
+	// States
 	let isShow = false;
 	let transition1 = false;
 	let isSkipAnimation = false;
@@ -22,7 +22,7 @@
 		}
 	});
 
-	// Method
+	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
