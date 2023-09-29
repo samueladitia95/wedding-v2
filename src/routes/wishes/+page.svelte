@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _schemaComments } from "$lib";
+	import { _schemaComments } from "$lib/schemas";
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
 	import Input from "$lib/components/Input.svelte";

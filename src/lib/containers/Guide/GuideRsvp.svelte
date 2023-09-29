@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { _schemaWishes } from "$lib";
+	import { _schemaWishes } from "$lib/schemas";
 	import Input from "$lib/components/Input.svelte";
 	import TextArea from "$lib/components/TextArea.svelte";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
