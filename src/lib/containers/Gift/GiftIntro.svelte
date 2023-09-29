@@ -49,7 +49,7 @@
 					/>
 				</div>
 				<div
-					class="text-left md:text-center text-ro-white leading-normal font-mirage text-5xl md:text-6xl md:px-24 md:leading-normal md:mt-4"
+					class="text-left md:text-center text-ro-white leading-normal font-mirage text-4xl md:text-6xl md:px-24 md:leading-normal md:mt-4"
 					in:fade={{ duration: 2000, delay: 2000 }}
 				>
 					Your presence at Our<span class="font-island text-5xl md:text-7xl mr-4">Wedding </span> is
