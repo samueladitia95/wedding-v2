@@ -9,7 +9,7 @@ export const _schemaComments = z
 		comment: z
 			.string({ required_error: "Comment is Required" })
 			.trim()
-			.min(1, { message: "Name is Required" })
+			.min(1, { message: "Your wishes is required" })
 	})
 	.required();
 
