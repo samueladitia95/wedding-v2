@@ -38,6 +38,7 @@
 		"@splidejs/splide-extension-auto-scroll": "^0.5.3",
 		"@splidejs/svelte-splide": "^0.2.9",
 		"dayjs": "^1.11.10",
+		"pocketbase": "^0.18.0",
 		"svelte-inview": "^4.0.1"
 	}
 }
