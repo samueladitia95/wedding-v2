@@ -1,4 +1,5 @@
 <script lang="ts">
+	// Imports
 	import dayjs from "dayjs";
 	import duration from "dayjs/plugin/duration";
 	import { onMount } from "svelte";
@@ -12,10 +13,10 @@
 
 	dayjs.extend(duration);
 
+	// States
 	let isShowBrideGroom = false;
 	let isShowCarausel = false;
 	let isShowCountdown = false;
-
 	const weddingDay = dayjs("2023-11-17", "yyyy-mm-dd");
 	let countdowns = [
 		{ type: "Day", value: 0 },
@@ -24,6 +25,7 @@
 		{ type: "Second", value: 0 }
 	];
 
+	// Methods
 	const handleChangeBrideGroom = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShowBrideGroom && detail.inView) isShowBrideGroom = true;
 	};
@@ -34,6 +36,7 @@
 		if (!isShowCountdown && detail.inView) isShowCountdown = true;
 	};
 
+	// Lifecycles
 	onMount(() => {
 		setInterval(function () {
 			const currentTime = dayjs();

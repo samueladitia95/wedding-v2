@@ -1,14 +1,17 @@
 <script lang="ts">
+	// Imports
 	import "@splidejs/svelte-splide/css";
-	import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 	import { Splide, SplideSlide } from "@splidejs/svelte-splide";
+	import { AutoScroll } from "@splidejs/splide-extension-auto-scroll";
 	import { browser } from "$app/environment";
 	import { inview } from "svelte-inview";
-	import { fade, fly } from "svelte/transition";
+	import { fade } from "svelte/transition";
 	import { carauselImages } from "$lib/constants";
 
+	// States
 	let isShow = false;
 
+	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};

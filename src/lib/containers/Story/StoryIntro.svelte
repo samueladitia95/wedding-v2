@@ -1,12 +1,15 @@
 <script lang="ts">
+	// Imports
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 
+	// States
 	let isShow = false;
+
+	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
-
 	const scrollIntoNavigation = (): void => {
 		document.getElementById("back-to-menu")?.scrollIntoView({
 			behavior: "smooth"
