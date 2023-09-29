@@ -58,7 +58,7 @@
 				out:fade={{ duration: 1000 }}
 			/>
 			<button
-				class="text-ro-brown bg-ro-white text-lg whitespace-nowrap rounded-full px-10 py-4 font-mirage absolute bottom-36 md:bottom-48 lg:bottom-60 left-1/2 transform -translate-x-1/2"
+				class="text-ro-brown bg-ro-white text-lg whitespace-nowrap rounded-full px-10 py-4 font-mirage absolute bottom-36 md:bottom-48 lg:bottom-28 left-1/2 transform -translate-x-1/2"
 				in:fade={{ duration: 2000, delay: 2000 }}
 				out:fade={{ duration: 1000 }}
 				on:click={() => {
