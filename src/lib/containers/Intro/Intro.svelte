@@ -10,6 +10,11 @@
 	let transition1 = false;
 	let isSkipAnimation = false;
 
+	// Props
+	export const title: string = "Let love be sincere; hate what is evil, hold on to what is good.";
+	export const subTitle: string = "Roman 12:9";
+	export const mainImageUrl: string = "/images/start_mobile_1.jpg";
+
 	// Store
 	isShowIntro.subscribe((value) => {
 		transition1 = value;
@@ -73,7 +78,7 @@
 		<div class="min-h-screen min-w-full relative">
 			<!-- Main Image -->
 			<img
-				src="/images/start_mobile_1.jpg"
+				src={mainImageUrl}
 				alt="main"
 				class="min-h-screen xl:max-h-screen w-full object-cover"
 				in:fly={!isSkipAnimation ? { y: 3000, duration: 2000, delay: 500, easing: cubicOut } : {}}
@@ -92,10 +97,10 @@
 			>
 				<div class="container flex flex-col justify-start items-center">
 					<div class="text-3xl md:text-4xl leading-normal md:leading-normal font-mirage max-w-xl">
-						Let love be sincere; hate what is evil, hold on to what is good.
+						{title}
 					</div>
 					<div class="font-island text-lg md:text-3xl leading-normal md:leading-normal">
-						Roman 12:9
+						{subTitle}
 					</div>
 				</div>
 			</div>

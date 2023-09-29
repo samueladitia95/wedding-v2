@@ -27,6 +27,9 @@
 			id: "gift"
 		}
 	];
+
+	// Props
+	export const brideAndGroomFullNameImg = "/icons/full-name.svg";
 </script>
 
 <div class="bg-ro-light-creme">
@@ -55,7 +58,7 @@
 
 		<!-- Full Name -->
 		<div class="w-full flex justify-center" id="footer-name">
-			<img src="/icons/full-name.svg" alt="full name" class="w-28 h-[14px]" />
+			<img src={brideAndGroomFullNameImg} alt="full name" class="w-28 h-[14px]" />
 		</div>
 	</div>
 </div>
