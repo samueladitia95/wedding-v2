@@ -58,7 +58,11 @@
 
 		<!-- Full Name -->
 		<div class="w-full flex justify-center" id="footer-name">
-			<img src={brideAndGroomFullNameImg} alt="full name" class="w-28 h-[14px]" />
+			<img
+				src={brideAndGroomFullNameImg}
+				alt="full name"
+				class="w-28 h-[14px] md:w-[205px] md:h-5"
+			/>
 		</div>
 	</div>
 </div>
