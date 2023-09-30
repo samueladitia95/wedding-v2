@@ -5,11 +5,16 @@
 	import { isFromAnotherPage, isPlay, isShowIntro } from "$lib/store";
 	import { afterUpdate, onMount } from "svelte";
 	import { fade } from "svelte/transition";
+	import type { LayoutData } from "./$types";
+
+	// Props
+	export let data: LayoutData;
 
 	// State
 	let isShow = false;
 	let isPlaying = false;
 	let player: HTMLAudioElement;
+	let songUrl: string = data.song || "";
 
 	// Store
 	isShowIntro.subscribe((value) => {
@@ -82,7 +87,7 @@
 		</div>
 	{/if}
 
-	<audio id="music-player" src="/music/music.mp3" bind:this={player} />
+	<audio id="music-player" src={songUrl} bind:this={player} />
 
 	<slot />
 </div>
