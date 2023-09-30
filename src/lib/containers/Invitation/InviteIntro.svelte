@@ -6,6 +6,9 @@
 	// States
 	let isShow = false;
 
+	// Props
+	export let introImg: string = "";
+
 	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
@@ -23,7 +26,7 @@
 	{#if isShow}
 		<!-- Main Image -->
 		<img
-			src="/images/invite_mobile_1.png"
+			src={introImg}
 			alt="invite"
 			class="absolute top-0 left-0 w-screen h-screen object-cover object-left"
 		/>

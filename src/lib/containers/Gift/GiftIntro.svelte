@@ -8,6 +8,7 @@
 
 	// Props
 	export let logoFullName: string = "";
+	export let giftImg: string = "";
 
 	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
@@ -30,7 +31,7 @@
 >
 	<!-- Main Image -->
 	<img
-		src="/images/gift_mobile_1.jpeg"
+		src={giftImg}
 		alt="invite"
 		class="absolute top-0 left-0 w-screen h-screen object-cover object-[22%]"
 	/>

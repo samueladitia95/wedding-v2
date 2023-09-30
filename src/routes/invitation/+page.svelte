@@ -10,7 +10,7 @@
 
 <div>
 	<Header id="invitation" fullMain={data.logos?.main}>
-		<InviteIntro />
+		<InviteIntro introImg={data.images?.invitation} />
 	</Header>
 
 	<InviteCountdown carauselImages={data.galleries} />

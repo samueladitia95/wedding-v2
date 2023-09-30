@@ -13,7 +13,7 @@
 	// Props
 	export let title: string = "Let love be sincere; hate what is evil, hold on to what is good.";
 	export let subTitle: string = "Roman 12:9";
-	export let mainImageUrl: string = "/images/start_mobile_1.jpg";
+	export let mainImageUrl: string = "";
 	export let logoMain: string = "";
 
 	// Store

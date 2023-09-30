@@ -10,7 +10,7 @@
 
 <div>
 	<Header id="gift" fullMain={data.logos?.main}>
-		<GiftIntro logoFullName={data.logos?.fullName} />
+		<GiftIntro logoFullName={data.logos?.fullName} giftImg={data.images?.gift} />
 	</Header>
 
 	<GiftFooter />

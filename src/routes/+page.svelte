@@ -7,5 +7,5 @@
 	export let data: LayoutData;
 </script>
 
-<Intro logoMain={data.logos?.main} />
+<Intro logoMain={data.logos?.main} mainImageUrl={data.images?.intro} />
 <Navigation logoFullNameColor={data.logos?.fullNameColor} logoMainColor={data.logos?.mainColor} />

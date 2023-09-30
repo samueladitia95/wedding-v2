@@ -4,7 +4,6 @@ import type { LayoutLoad } from "./$types";
 export const load: LayoutLoad = async () => {
 	try {
 		const webContent = await pb.collection("wedding_v2").getFirstListItem('project="default"');
-		console.log(webContent, "++++++++++++===");
 
 		// Galleries Images
 		let galleries;
@@ -35,15 +34,22 @@ export const load: LayoutLoad = async () => {
 			guide1: pb.files.getUrl(webContent, webContent.image_guide_1),
 			guide2: pb.files.getUrl(webContent, webContent.image_guide_2),
 			guide3: pb.files.getUrl(webContent, webContent.image_guide_3),
-			guide4: pb.files.getUrl(webContent, webContent.image_guide_4),
+			guide4: pb.files.getUrl(webContent, webContent.image_guide_4)
 		};
 
-		console.log(logos);
+		// Images
+		const images = {
+			intro: pb.files.getUrl(webContent, webContent.image_intro),
+			invitation: pb.files.getUrl(webContent, webContent.image_invitation),
+			gift: pb.files.getUrl(webContent, webContent.image_gift)
+		};
+
 		return {
 			galleries,
 			song,
 			video,
-			logos
+			logos,
+			images
 		};
 	} catch (err) {
 		console.log(err);
