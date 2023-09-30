@@ -1,7 +1,9 @@
 <script lang="ts">
+	// Imports
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 
+	// States
 	let isShow = false;
 	const schedules = [
 		{
@@ -29,6 +31,10 @@
 		}
 	];
 
+	// Props
+	export let mainGuideImage: string = "";
+
+	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
@@ -82,7 +88,7 @@
 
 			{#if isShow}
 				<div class="flex justify-center" in:fade={{ duration: 1000, delay: 3000 }}>
-					<img src="/images/guide_1.png" alt="logo" class="w-full h-full max-w-[711px] xl:-mb-20" />
+					<img src={mainGuideImage} alt="logo" class="w-full h-full max-w-[711px] xl:-mb-20" />
 				</div>
 			{/if}
 		</div>

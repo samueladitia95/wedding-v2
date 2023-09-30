@@ -1,8 +1,15 @@
 <script lang="ts">
+	// Imports
 	import { inview } from "svelte-inview";
 	import { fade } from "svelte/transition";
 
+	// States
 	let isShow = false;
+
+	// Props
+	export let locationMapImg: string = "";
+
+	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
@@ -31,7 +38,7 @@
 				</div>
 
 				<img
-					src="/images/guide_2.png"
+					src={locationMapImg}
 					alt="full name"
 					class="w-full max-h-[300px] md:max-h-[520px]"
 					in:fade={{ duration: 1000, delay: 1000 }}

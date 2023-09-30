@@ -1,11 +1,17 @@
 <script lang="ts">
+	// Imports
 	import { inview } from "svelte-inview";
 	import { fade } from "svelte/transition";
 
+	// Props
+	export let guide3: string = "";
+	export let guide4: string = "";
+
+	// States
 	let isShow = false;
-	const accomodations = [
+	let accomodations = [
 		{
-			logo: "/images/guide_3.svg",
+			logo: guide3,
 			subject: "FAMILY",
 			location: "Hotel Episode Kuta Bali",
 			address: "Jl. Bypass Ngurai Rai No.99, Kuta, Kec. Kuta",
@@ -18,7 +24,7 @@
 			time: "2 Nights (Nov 16 - Nov 18, 2023)"
 		},
 		{
-			logo: "/images/guide_4.svg",
+			logo: guide4,
 			subject: "FAMILY ONLY",
 			location: "Hotel Santika Nusa Dua - Church - Canna Bali - Hotel Episode Kita"
 		}

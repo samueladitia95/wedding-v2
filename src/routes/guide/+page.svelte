@@ -17,10 +17,10 @@
 		<GuideIntro logoFullName={data.logos?.fullName} />
 	</Header>
 
-	<GuideDetail />
-	<GuideLocation />
+	<GuideDetail mainGuideImage={data.logos?.guide1} />
+	<GuideLocation locationMapImg={data.logos?.guide2} />
 	<GuideDresscode />
-	<GuideAccomodation />
+	<GuideAccomodation guide3={data.logos?.guide3} guide4={data.logos?.guide4} />
 	<GuideRsvp />
 
 	<Footer id="guide" />
