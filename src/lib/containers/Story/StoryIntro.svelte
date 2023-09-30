@@ -11,7 +11,7 @@
 		if (!isShow && detail.inView) isShow = true;
 	};
 	const scrollIntoNavigation = (): void => {
-		document.getElementById("back-to-menu")?.scrollIntoView({
+		document.getElementById("story-video")?.scrollIntoView({
 			behavior: "smooth"
 		});
 	};

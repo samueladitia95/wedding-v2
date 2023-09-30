@@ -16,6 +16,7 @@
 </script>
 
 <div
+	id="story-video"
 	class="relative min-h-screen min-w-full bg-ro-brown"
 	use:inview={{
 		rootMargin: "-100px",
