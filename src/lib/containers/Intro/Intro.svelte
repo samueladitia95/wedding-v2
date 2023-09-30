@@ -11,9 +11,10 @@
 	let isSkipAnimation = false;
 
 	// Props
-	export const title: string = "Let love be sincere; hate what is evil, hold on to what is good.";
-	export const subTitle: string = "Roman 12:9";
-	export const mainImageUrl: string = "/images/start_mobile_1.jpg";
+	export let title: string = "Let love be sincere; hate what is evil, hold on to what is good.";
+	export let subTitle: string = "Roman 12:9";
+	export let mainImageUrl: string = "/images/start_mobile_1.jpg";
+	export let logoMain: string = "";
 
 	// Store
 	isShowIntro.subscribe((value) => {
@@ -51,7 +52,7 @@
 	{#if isShow && !transition1}
 		<div class="container h-full w-full relative">
 			<img
-				src="/icons/front-logo.svg"
+				src={logoMain}
 				alt="main logo"
 				class="w-36 h-36 xl:w-48 xl:h-48 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
 				in:fade={{ duration: 2000 }}

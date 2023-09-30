@@ -28,8 +28,9 @@
 		}
 	];
 
-	// Props
-	export const brideAndGroomFullNameImg = "/icons/full-name.svg";
+	// Props\
+	export let logoFullNameColor: string = "";
+	export let logoMainColor: string = "";
 </script>
 
 <div class="bg-ro-light-creme">
@@ -38,7 +39,7 @@
 	>
 		<!-- Main Logo -->
 		<div class="w-full flex justify-center">
-			<img src="/icons/logo-white.svg" alt="full name" class="w-12 h-12" />
+			<img src={logoMainColor} alt="full name" class="w-12 h-12" />
 		</div>
 
 		<!-- Nav Item -->
@@ -58,11 +59,7 @@
 
 		<!-- Full Name -->
 		<div class="w-full flex justify-center" id="footer-name">
-			<img
-				src={brideAndGroomFullNameImg}
-				alt="full name"
-				class="w-28 h-[14px] md:w-[205px] md:h-5"
-			/>
+			<img src={logoFullNameColor} alt="full name" class="w-28 h-[14px] md:w-[205px] md:h-5" />
 		</div>
 	</div>
 </div>

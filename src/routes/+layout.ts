@@ -26,10 +26,20 @@ export const load: LayoutLoad = async () => {
 			video = pb.files.getUrl(webContent, webContent.video);
 		}
 
+		// Logos
+		const logos = {
+			main: pb.files.getUrl(webContent, webContent.logo_main),
+			mainColor: pb.files.getUrl(webContent, webContent.logo_main_color),
+			fullName: pb.files.getUrl(webContent, webContent.logo_full_name),
+			fullNameColor: pb.files.getUrl(webContent, webContent.logo_full_name_color)
+		};
+
+		console.log(logos);
 		return {
 			galleries,
 			song,
-			video
+			video,
+			logos
 		};
 	} catch (err) {
 		console.log(err);
