@@ -6,6 +6,9 @@
 	// States
 	let isShow = false;
 
+	// Props
+	export let videoUrl: string = "";
+
 	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
@@ -22,15 +25,10 @@
 >
 	{#if isShow}
 		<div class="z-full absolute" in:fade={{ duration: 2000, delay: 1000 }}>
-			<!-- Need to change to youtube player to autoplay -->
-			<iframe
-				src="https://drive.google.com/file/d/1jC1k8t6ew4WIItndyfqmCyDDhv7SQBKu/preview?start=1"
-				frameborder="0"
-				allowfullscreen={false}
-				title="Our Story"
-				class="w-screen min-h-screen"
-				allow="autoplay"
-			/>
+			<video class="w-screen min-h-screen p-0" autoplay loop muted>
+				<source src={videoUrl} type="video/mp4" />
+				<track kind="captions" />
+			</video>
 		</div>
 	{/if}
 </div>

@@ -13,7 +13,7 @@
 	<Header id="story">
 		<StoryIntro />
 	</Header>
-	<StoryVideo />
+	<StoryVideo videoUrl={data.video} />
 	<StoryMain carauselImages={data.galleries} />
 	<Footer id="story" />
 </div>

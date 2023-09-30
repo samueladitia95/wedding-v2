@@ -20,9 +20,16 @@ export const load: LayoutLoad = async () => {
 			song = pb.files.getUrl(webContent, webContent.song);
 		}
 
+		// Video
+		let video;
+		if (webContent.video) {
+			video = pb.files.getUrl(webContent, webContent.video);
+		}
+
 		return {
 			galleries,
-			song
+			song,
+			video
 		};
 	} catch (err) {
 		console.log(err);
