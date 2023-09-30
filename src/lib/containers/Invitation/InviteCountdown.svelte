@@ -9,7 +9,6 @@
 	import { browser } from "$app/environment";
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
-	import { carauselImages } from "$lib/constants";
 
 	dayjs.extend(duration);
 
@@ -24,6 +23,9 @@
 		{ type: "Minute", value: 0 },
 		{ type: "Second", value: 0 }
 	];
+
+	// Props
+	export let carauselImages: string[] = [];
 
 	// Methods
 	const handleChangeBrideGroom = ({ detail }: CustomEvent<ObserverEventDetails>): void => {

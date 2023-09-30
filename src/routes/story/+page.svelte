@@ -4,6 +4,9 @@
 	import StoryIntro from "$lib/containers/Story/StoryIntro.svelte";
 	import StoryMain from "$lib/containers/Story/StoryMain.svelte";
 	import StoryVideo from "$lib/containers/Story/StoryVideo.svelte";
+	import type { LayoutData } from "../$types";
+
+	export let data: LayoutData;
 </script>
 
 <div>
@@ -11,6 +14,6 @@
 		<StoryIntro />
 	</Header>
 	<StoryVideo />
-	<StoryMain />
+	<StoryMain carauselImages={data.galleries} />
 	<Footer id="story" />
 </div>

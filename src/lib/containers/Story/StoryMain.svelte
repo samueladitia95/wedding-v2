@@ -6,10 +6,12 @@
 	import { browser } from "$app/environment";
 	import { inview } from "svelte-inview";
 	import { fade } from "svelte/transition";
-	import { carauselImages } from "$lib/constants";
 
 	// States
 	let isShow = false;
+
+	// Props
+	export let carauselImages: string[] = [];
 
 	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
