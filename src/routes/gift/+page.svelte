@@ -9,7 +9,7 @@
 </script>
 
 <div>
-	<Header id="gift">
+	<Header id="gift" fullMain={data.logos?.main}>
 		<GiftIntro logoFullName={data.logos?.fullName} />
 	</Header>
 

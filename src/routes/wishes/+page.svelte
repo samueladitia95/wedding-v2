@@ -54,7 +54,7 @@
 </script>
 
 <div>
-	<Header id="wishes">
+	<Header id="wishes" fullMain={data.logos?.main}>
 		<div
 			class="relative min-h-screen"
 			use:inview={{

@@ -10,7 +10,7 @@
 </script>
 
 <div>
-	<Header id="story">
+	<Header id="story" fullMain={data.logos?.main}>
 		<StoryIntro logoFullname={data.logos?.fullName} />
 	</Header>
 	<StoryVideo videoUrl={data.video} />

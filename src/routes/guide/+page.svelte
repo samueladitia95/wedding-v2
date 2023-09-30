@@ -13,7 +13,7 @@
 </script>
 
 <div>
-	<Header id="guide">
+	<Header id="guide" fullMain={data.logos?.main}>
 		<GuideIntro logoFullName={data.logos?.fullName} />
 	</Header>
 

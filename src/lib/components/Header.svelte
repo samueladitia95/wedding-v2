@@ -1,10 +1,17 @@
 <script lang="ts">
+	// Imports
 	import { isFromAnotherPage, isShowIntro } from "$lib/store";
 	import { inview } from "svelte-inview";
 	import { fade } from "svelte/transition";
 
-	export let id: string;
+	// States
 	let isShow = false;
+
+	// Props
+	export let id: string;
+	export let fullMain: string = "";
+
+	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
@@ -25,7 +32,7 @@
 				in:fade={{ duration: 2000, delay: 500 }}
 			>
 				<!-- Main Logo -->
-				<img src="/images/logo_white_2.png" alt="logo" class="w-12 h-12 md:w-16 md:h-16" />
+				<img src={fullMain} alt="logo" class="w-12 h-12 md:w-16 md:h-16" />
 
 				<!-- Close button -->
 				<a

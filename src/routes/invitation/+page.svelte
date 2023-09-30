@@ -9,7 +9,7 @@
 </script>
 
 <div>
-	<Header id="invitation">
+	<Header id="invitation" fullMain={data.logos?.main}>
 		<InviteIntro />
 	</Header>
 
