@@ -24,8 +24,8 @@
 	on:inview_change={handleChange}
 >
 	{#if isShow}
-		<div class="z-full absolute" in:fade={{ duration: 2000, delay: 1000 }}>
-			<video class="w-screen min-h-screen p-0" autoplay loop muted>
+		<div class="z-full" in:fade={{ duration: 2000, delay: 1000 }}>
+			<video class="w-screen min-h-screen p-0 max-h-screen" autoplay loop muted>
 				<source src={videoUrl} type="video/mp4" />
 				<track kind="captions" />
 			</video>
