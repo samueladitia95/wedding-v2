@@ -7,6 +7,9 @@
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
+	import type { LayoutData } from "../$types";
+
+	export let data: LayoutData;
 
 	let isShow: boolean = false;
 	let wishes = [
@@ -65,11 +68,7 @@
 					<!-- Main Section -->
 					<div class="container pt-40 max-w-3xl">
 						<div in:fly={{ x: -1000, duration: 2000, delay: 500 }}>
-							<img
-								src="/icons/full-name-white.svg"
-								alt="full name"
-								class=" h-[22px] md:h-[32px] mb-2"
-							/>
+							<img src={data.logos?.fullName} alt="full name" class=" h-[22px] md:h-[32px] mb-2" />
 						</div>
 						<div
 							class="text-left text-ro-white leading-relaxed font-mirage text-3xl md:text-6xl"
