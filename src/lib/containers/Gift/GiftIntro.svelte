@@ -6,6 +6,9 @@
 	// States
 	let isShow = false;
 
+	// Props
+	export let logoFullName: string = "";
+
 	// Methods
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
@@ -42,11 +45,7 @@
 					in:fly={{ x: -1000, duration: 2000, delay: 500 }}
 					class="flex justify-start md:justify-center"
 				>
-					<img
-						src="/icons/full-name-white.svg"
-						alt="full name"
-						class="w-44 h-[20px] md:w-[282px] md:h-[30px]"
-					/>
+					<img src={logoFullName} alt="full name" class="w-44 h-[20px] md:w-[282px] md:h-[30px]" />
 				</div>
 				<div
 					class="text-left md:text-center text-ro-white leading-normal font-mirage text-4xl md:text-6xl md:px-24 md:leading-normal md:mt-4"

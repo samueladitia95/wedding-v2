@@ -11,7 +11,7 @@
 
 <div>
 	<Header id="story">
-		<StoryIntro />
+		<StoryIntro logoFullname={data.logos?.fullName} />
 	</Header>
 	<StoryVideo videoUrl={data.video} />
 	<StoryMain carauselImages={data.galleries} />
