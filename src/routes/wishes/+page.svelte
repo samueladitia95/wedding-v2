@@ -1,10 +1,12 @@
 <script lang="ts">
-	import dayjs from "dayjs";
-	import { _schemaComments } from "$lib/schemas";
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
 	import Input from "$lib/components/Input.svelte";
 	import TextArea from "$lib/components/TextArea.svelte";
+	import dayjs from "dayjs";
+	import { pb } from "$lib/pocketbase";
+	import { _schemaWishes } from "$lib/schemas";
+	import { invalidateAll } from "$app/navigation";
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
@@ -13,43 +15,36 @@
 	export let data: PageData;
 
 	let isShow: boolean = false;
-	// let wishes = [
-	// 	{
-	// 		name: "John Doe",
-	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-	// 		createdAt: "Saturday, 13 May 2023  10:00"
-	// 	},
-	// 	{
-	// 		name: "John Doe",
-	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-	// 		createdAt: "Saturday, 13 May 2023  10:00"
-	// 	},
-	// 	{
-	// 		name: "John Doe",
-	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-	// 		createdAt: "Saturday, 13 May 2023  10:00"
-	// 	},
-	// 	{
-	// 		name: "John Doe",
-	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-	// 		createdAt: "Saturday, 13 May 2023  10:00"
-	// 	}
-	// ];
-	let wishes = data.wishes?.items;
 	let isSuccess: boolean = false;
+	// it means when the data change, it will reactive to the ui
+	$: wishes = data.wishes?.items;
 
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
 		if (!isShow && detail.inView) isShow = true;
 	};
 
-	const { form, errors, enhance, reset } = superForm(superValidateSync(_schemaComments), {
+	const { form, errors, enhance } = superForm(superValidateSync(_schemaWishes), {
 		SPA: true,
-		validators: _schemaComments,
-		onUpdate({ form }) {
+		validators: _schemaWishes,
+		resetForm: true,
+		async onUpdate({ form }) {
+			console.log("The form body to send ==> ", form);
 			if (form.valid) {
 				isSuccess = true;
-				reset();
-				// TODO Send the form here
+
+				try {
+					const data = {
+						...form.data,
+						project: "default",
+						template_id: "wedding_v2"
+					};
+
+					await pb.collection("wishes").create(data);
+
+					invalidateAll();
+				} catch (err) {
+					console.log("wishes submit error: ", err);
+				}
 			}
 		}
 	});
@@ -95,8 +90,8 @@
 							<TextArea
 								name="comment"
 								label="Write your wishes"
-								bind:value={$form.comment}
-								error={$errors.comment}
+								bind:value={$form.wishes}
+								error={$errors.wishes}
 							/>
 							<button
 								type="submit"
