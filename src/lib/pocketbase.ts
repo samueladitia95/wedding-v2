@@ -5,4 +5,8 @@ export function createInstance() {
 	return new PocketBase(PUBLIC_POCKETBASE_URL);
 }
 
-export const pb = createInstance();
+const pb = createInstance();
+
+pb.autoCancellation(false);
+
+export { pb };
