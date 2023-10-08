@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { _schemaWishes } from "$lib/schemas";
+	import { _schemaRsvp } from "$lib/schemas";
 	import Input from "$lib/components/Input.svelte";
 	import TextArea from "$lib/components/TextArea.svelte";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
 
 	let isSuccess: boolean = false;
 
-	const { form, errors, enhance } = superForm(superValidateSync(_schemaWishes), {
+	const { form, errors, enhance } = superForm(superValidateSync(_schemaRsvp), {
 		SPA: true,
-		validators: _schemaWishes,
+		validators: _schemaRsvp,
 		onUpdate({ form }) {
 			if (form.valid) {
 				isSuccess = true;
