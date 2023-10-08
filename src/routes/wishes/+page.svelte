@@ -1,4 +1,5 @@
 <script lang="ts">
+	import dayjs from "dayjs";
 	import { _schemaComments } from "$lib/schemas";
 	import Footer from "$lib/components/Footer.svelte";
 	import Header from "$lib/components/Header.svelte";
@@ -7,33 +8,34 @@
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
-	import type { LayoutData } from "../$types";
+	import type { PageData } from "./$types";
 
-	export let data: LayoutData;
+	export let data: PageData;
 
 	let isShow: boolean = false;
-	let wishes = [
-		{
-			name: "John Doe",
-			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-			createdAt: "Saturday, 13 May 2023  10:00"
-		},
-		{
-			name: "John Doe",
-			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-			createdAt: "Saturday, 13 May 2023  10:00"
-		},
-		{
-			name: "John Doe",
-			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-			createdAt: "Saturday, 13 May 2023  10:00"
-		},
-		{
-			name: "John Doe",
-			comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
-			createdAt: "Saturday, 13 May 2023  10:00"
-		}
-	];
+	// let wishes = [
+	// 	{
+	// 		name: "John Doe",
+	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+	// 		createdAt: "Saturday, 13 May 2023  10:00"
+	// 	},
+	// 	{
+	// 		name: "John Doe",
+	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+	// 		createdAt: "Saturday, 13 May 2023  10:00"
+	// 	},
+	// 	{
+	// 		name: "John Doe",
+	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+	// 		createdAt: "Saturday, 13 May 2023  10:00"
+	// 	},
+	// 	{
+	// 		name: "John Doe",
+	// 		comment: "Congrats on your wedding! I’m so happy for both of you! See you soon in Bali!",
+	// 		createdAt: "Saturday, 13 May 2023  10:00"
+	// 	}
+	// ];
+	let wishes = data.wishes?.items;
 	let isSuccess: boolean = false;
 
 	const handleChange = ({ detail }: CustomEvent<ObserverEventDetails>): void => {
@@ -110,9 +112,9 @@
 								{#each wishes as wish}
 									<div class="flex flex-col justify-start items-start gap-4">
 										<div class="font-mirage text-ro-light-creme md:text-2xl">{wish.name}</div>
-										<div class="font-oakes text-ro-white text-sm md:text-xl">{wish.comment}</div>
+										<div class="font-oakes text-ro-white text-sm md:text-xl">{wish.wishes}</div>
 										<div class="font-oakes text-ro-light-creme text-xs md:text-sm">
-											{wish.createdAt}
+											{dayjs(wish.created).format("dddd, D MMMM YYYY H:mm")}
 										</div>
 									</div>
 								{/each}
