@@ -16,6 +16,7 @@
 
 	let isShow: boolean = false;
 	let isSuccess: boolean = false;
+
 	// it means when the data change, it will reactive to the ui
 	$: wishes = data.wishes?.items;
 
@@ -28,7 +29,6 @@
 		validators: _schemaWishes,
 		resetForm: true,
 		async onUpdate({ form }) {
-			console.log("The form body to send ==> ", form);
 			if (form.valid) {
 				isSuccess = true;
 
