@@ -1,19 +1,20 @@
 import { z } from "zod";
 
-export const _schemaComments = z
+export const _schemaWishes = z
 	.object({
 		name: z
 			.string({ required_error: "Name is Required" })
 			.trim()
 			.min(1, { message: "Name is Required" }),
-		comment: z
-			.string({ required_error: "Comment is Required" })
+		wishes: z
+			.string({ required_error: "Wishes is Required" })
 			.trim()
-			.min(1, { message: "Your wishes is required" })
+			.min(12, { message: "Your wishes should have minimum 12 characters" })
+			.max(255, { message: "Your wishes should have maximum 255 characters" })
 	})
 	.required();
 
-export const _schemaWishes = z
+export const _schemaRsvp = z
 	.object({
 		name: z
 			.string({ required_error: "Name is Required" })
