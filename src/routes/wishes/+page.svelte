@@ -6,16 +6,18 @@
 	import dayjs from "dayjs";
 	import { pb } from "$lib/pocketbase";
 	import { _schemaWishes } from "$lib/schemas";
-	import { invalidateAll } from "$app/navigation";
+	import { goto, invalidateAll } from "$app/navigation";
 	import { inview } from "svelte-inview";
 	import { fade, fly } from "svelte/transition";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
 	import type { PageData } from "./$types";
+	import { page } from "$app/stores";
 
 	export let data: PageData;
 
 	let isShow: boolean = false;
 	let isSuccess: boolean = false;
+	let n: string = $page.url.searchParams.get("n") || ""; // query search
 
 	// it means when the data change, it will reactive to the ui
 	$: wishes = data.wishes?.items;
@@ -48,6 +50,23 @@
 			}
 		}
 	});
+
+	// ? Methods
+	const handleLoadMore = async () => {
+		let newPage = 2;
+		if (n && +n) {
+			newPage++;
+		}
+		n = String(newPage);
+		const query = {
+			n: String(newPage)
+		};
+
+		await goto(`?${new URLSearchParams(query).toString()}`, {
+			keepFocus: true,
+			noScroll: true
+		});
+	};
 </script>
 
 <div>
@@ -116,6 +135,7 @@
 							</div>
 							<button
 								class="mt-8 font-mirage text-lg md:text-xl w-full rounded-full hover:bg-opacity-80 disabled:bg-opacity-50 py-3 text-ro-light-creme border border-ro-light-creme"
+								on:click={() => handleLoadMore()}
 							>
 								More
 							</button>
