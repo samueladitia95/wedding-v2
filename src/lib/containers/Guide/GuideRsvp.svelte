@@ -1,18 +1,33 @@
 <script lang="ts">
-	import { _schemaWishes } from "$lib/schemas";
 	import Input from "$lib/components/Input.svelte";
 	import TextArea from "$lib/components/TextArea.svelte";
+	import { invalidateAll } from "$app/navigation";
+	import { pb } from "$lib/pocketbase";
+	import { _schemaRsvp } from "$lib/schemas";
 	import { superForm, superValidateSync } from "sveltekit-superforms/client";
 
 	let isSuccess: boolean = false;
 
-	const { form, errors, enhance } = superForm(superValidateSync(_schemaWishes), {
+	const { form, errors, enhance } = superForm(superValidateSync(_schemaRsvp), {
 		SPA: true,
-		validators: _schemaWishes,
-		onUpdate({ form }) {
+		validators: _schemaRsvp,
+		resetForm: true,
+		async onUpdate({ form }) {
 			if (form.valid) {
 				isSuccess = true;
-				// TODO Send the form here
+
+				try {
+					const data = {
+						...form.data,
+						project: "default",
+						template_id: "wedding_v2"
+					};
+					await pb.collection("rsvp").create(data);
+
+					invalidateAll();
+				} catch (err) {
+					console.log("rsvp submit error: ", err);
+				}
 			}
 		}
 	});
@@ -24,13 +39,28 @@
 		{#if !isSuccess}
 			<form class="flex flex-col gap-6 md:gap-10" method="post" use:enhance>
 				<!-- Name -->
-				<Input name="name" label="Fill Your Name" bind:value={$form.name} error={$errors.name} />
+				<Input
+					name="attendee_name"
+					label="Fill Your Name"
+					bind:value={$form.attendee_name}
+					error={$errors.attendee_name}
+				/>
 
 				<!-- Phone Number -->
-				<Input name="phone" label="Phone Number" bind:value={$form.phone} error={$errors.phone} />
+				<Input
+					name="attendee_phone"
+					label="Phone Number"
+					bind:value={$form.attendee_phone}
+					error={$errors.attendee_phone}
+				/>
 
 				<!-- Email -->
-				<Input name="email" label="Email" bind:value={$form.email} error={$errors.email} />
+				<Input
+					name="attendee_email"
+					label="Email"
+					bind:value={$form.attendee_email}
+					error={$errors.attendee_email}
+				/>
 
 				<!-- Is Attending -->
 				<div class="flex flex-col gap-4">
@@ -40,21 +70,21 @@
 					<div class="flex gap-32 lg:gap-48">
 						<div class="flex gap-2 items-center">
 							<input
-								name="isAttending"
+								name="is_attend"
 								type="radio"
 								class="w-5 h-5 appearance-none border-2 border-white rounded-full box-content checked:bg-white checked:ring-4 checked:ring-ro-brown-light checked:ring-inset"
 								value={true}
-								bind:group={$form.isAttending}
+								bind:group={$form.is_attend}
 							/>
 							<div class="md:text-xl">Yes</div>
 						</div>
 						<div class="flex gap-2 items-center">
 							<input
-								name="isAttending"
+								name="is_attend"
 								type="radio"
 								class="w-5 h-5 appearance-none border-2 border-white rounded-full box-content checked:bg-white checked:ring-4 checked:ring-ro-brown-light checked:ring-inset"
 								value={false}
-								bind:group={$form.isAttending}
+								bind:group={$form.is_attend}
 							/>
 							<div class="md:text-xl">No</div>
 						</div>
@@ -69,21 +99,21 @@
 					<div class="flex gap-32 lg:gap-48">
 						<div class="flex gap-2 items-center">
 							<input
-								name="isDate"
+								name="is_bring_partner"
 								type="radio"
 								class="w-5 h-5 appearance-none border-2 border-white rounded-full box-content checked:bg-white checked:ring-4 checked:ring-ro-brown-light checked:ring-inset"
 								value={true}
-								bind:group={$form.isDate}
+								bind:group={$form.is_bring_partner}
 							/>
 							<div class="md:text-xl">Yes</div>
 						</div>
 						<div class="flex gap-2 items-center">
 							<input
-								name="isDate"
+								name="is_bring_partner"
 								type="radio"
 								class="w-5 h-5 appearance-none border-2 border-white rounded-full box-content checked:bg-white checked:ring-4 checked:ring-ro-brown-light checked:ring-inset"
 								value={false}
-								bind:group={$form.isDate}
+								bind:group={$form.is_bring_partner}
 							/>
 							<div class="md:text-xl">No</div>
 						</div>
@@ -101,21 +131,21 @@
 					<div class="flex gap-32 lg:gap-48">
 						<div class="flex gap-2 items-center">
 							<input
-								name="isAccomodation"
+								name="is_need_accomodation"
 								type="radio"
 								class="w-5 h-5 appearance-none border-2 border-white rounded-full box-content checked:bg-white checked:ring-4 checked:ring-ro-brown-light checked:ring-inset"
 								value={true}
-								bind:group={$form.isAccomodation}
+								bind:group={$form.is_need_accomodation}
 							/>
 							<div class="md:text-xl">Yes</div>
 						</div>
 						<div class="flex gap-2 items-center">
 							<input
-								name="isAccomodation"
+								name="is_need_accomodation"
 								type="radio"
 								class="w-5 h-5 appearance-none border-2 border-white rounded-full box-content checked:bg-white checked:ring-4 checked:ring-ro-brown-light checked:ring-inset"
 								value={false}
-								bind:group={$form.isAccomodation}
+								bind:group={$form.is_need_accomodation}
 							/>
 							<div class="md:text-xl">No</div>
 						</div>
@@ -126,10 +156,10 @@
 				<div class="flex flex-col gap-4">
 					<p class="text-base md:text-xl">Do you have any allergies & food restrictions?</p>
 					<TextArea
-						name="allergies"
+						name="attendee_note"
 						label="Allergies & Food Restriction"
-						bind:value={$form.allergies}
-						error={$errors.allergies}
+						bind:value={$form.attendee_note}
+						error={$errors.attendee_note}
 					/>
 				</div>
 
