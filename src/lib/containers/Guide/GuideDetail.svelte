@@ -26,7 +26,7 @@
 		{
 			activity: "COCKTAIL SESSION",
 			time: "16:00 PM (WITA)",
-			location: "Stone 1 at Canna Bali",
+			location: "Stone 1 at Canna Bali (Friends Only)",
 			notes: "Join us for some day-drinking and music for an after wedding celebration."
 		}
 	];
