@@ -44,14 +44,14 @@
 					in:fade={{ duration: 2000, delay: 2000 }}
 				>
 					<div class="md:max-w-md xl:max-w-lg">
-						Join us at Our <span class="font-island text-6xl md:text-7xl mr-8"> Special </span> Day
+						Join us on Our <span class="font-island text-6xl md:text-7xl mr-8"> Special </span> Day
 					</div>
 				</div>
 				<div
 					class="font-mirage text-xl md:text-2xl mt-4 md:flex md:justify-center md:text-center"
 					in:fade={{ duration: 2000, delay: 2500 }}
 				>
-					<div class="md:max-w-md">Find out about the locations, accomodations and The RSVP</div>
+					<div class="md:max-w-md">Find out about the locations, accomodation and The RSVP</div>
 				</div>
 			</div>
 		</div>
