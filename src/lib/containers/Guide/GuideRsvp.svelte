@@ -171,7 +171,7 @@
 				</button>
 			</form>
 		{:else}
-			<div class="font-mirage text-2xl text-center py-40">
+			<div class="font-mirage text-2xl md:text-3xl text-center py-40">
 				<div>Thankyou for submitted your RSVP.</div>
 				<div>See you at the D-DAY.</div>
 				<div class="mt-10">We will contact you about the details</div>
