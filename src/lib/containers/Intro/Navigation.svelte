@@ -39,7 +39,7 @@
 	>
 		<!-- Main Logo -->
 		<div class="w-full flex justify-center">
-			<img src={logoMainColor} alt="full name" class="w-12 h-12" />
+			<img src={logoMainColor} alt="full name" class="w-12 h-12 md:w-[72px] md:h-[79px]" />
 		</div>
 
 		<!-- Nav Item -->

@@ -29,6 +29,7 @@ export const load: LayoutLoad = async () => {
 		const logos = {
 			main: pb.files.getUrl(webContent, webContent.logo_main),
 			mainColor: pb.files.getUrl(webContent, webContent.logo_main_color),
+			mainColorAlt: pb.files.getUrl(webContent, webContent.logo_main_color_alt),
 			fullName: pb.files.getUrl(webContent, webContent.logo_full_name),
 			fullNameColor: pb.files.getUrl(webContent, webContent.logo_full_name_color),
 			guide1: pb.files.getUrl(webContent, webContent.image_guide_1),
