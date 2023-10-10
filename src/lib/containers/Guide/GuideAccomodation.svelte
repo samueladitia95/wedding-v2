@@ -52,7 +52,7 @@
 						class="font-island text-3xl md:text-5xl mb-10 md:mb-14"
 						in:fade={{ duration: 1000, delay: 500 }}
 					>
-						The Accomodation
+						The Accommodations
 					</div>
 
 					<div class="flex flex-col gap-10 md:gap-14 justify-start items-center px-2 font-mirage">

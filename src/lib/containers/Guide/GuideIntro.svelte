@@ -51,7 +51,7 @@
 					class="font-mirage text-xl md:text-2xl mt-4 md:flex md:justify-center md:text-center"
 					in:fade={{ duration: 2000, delay: 2500 }}
 				>
-					<div class="md:max-w-md">Find out about the locations, accomodation and The RSVP</div>
+					<div class="md:max-w-md">Find out about the locations, accommodation and The RSVP</div>
 				</div>
 			</div>
 		</div>
