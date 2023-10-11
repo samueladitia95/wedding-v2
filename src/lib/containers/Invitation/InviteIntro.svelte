@@ -44,7 +44,7 @@
 				<div
 					class="text-2xl md:text-5xl md:leading-normal md:max-w-xl font-mirage text-center text-ro-white leading-relaxed pt-44 px-12"
 				>
-					Together with their their loving families
+					Together with their loving families
 				</div>
 			</div>
 		</div>
